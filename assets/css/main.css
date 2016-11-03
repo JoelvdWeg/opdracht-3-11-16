@@ -12,6 +12,23 @@ button{
   background: white!important;
   width: 100%!important;
 }
+
+
+th{
+  padding: 10px 0px!important;
+  text-align: center;
+  width: 150px;
+  border: 1px solid #888888;
+  background: #eee;
+}
+
+td{
+  padding: 10px 0px!important;
+  text-align: center;
+  width: 150px;
+  border: 1px solid #888888;
+  color: #888;
+}
 .Form{
   background: #eee;
   border: 1px solid #888888;

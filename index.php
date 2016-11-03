@@ -2,7 +2,7 @@
   include('classes/db_class.php');
 
   $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
-  $gegevens = $db->dbinsert('*', 'users');
+  $gegevens = $db->dbselect('*', 'users');
  ?>
 
  <!doctype html>
@@ -20,6 +20,7 @@
 
          <link rel="stylesheet" href="assets/css/bootstrap.min.css">
          <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+         <link rel="stylesheet" href="assets/css/font-awesome.min.css">
          <link rel="stylesheet" href="assets/css/main.css">
 
          <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -35,10 +36,19 @@
              <th>Password</th>
              <th>Server/Host</th>
              <th>Port</th>
+             <th>Actions</th>
            </tr>
          <?php
          foreach ($gegevens as $account) {
-           $account['username'] ;
+          echo '<tr><td>' .$account['Name']. '</td>' ;
+          echo '<td>'.$account['Company Name']. '</td>';
+          echo '<td>'.$account['Domain Name']. '</td>';
+          echo '<td>'.$account['User Name']. '</td>';
+          echo '<td>'.$account['Password']. '</td>';
+          echo '<td>'.$account['Server']. '</td>';
+          echo '<td>'.$account['Port']. '</td>';
+          echo '<td> <i onclick="delete('.$account['Id'].')" class="fa fa-trash-o" aria-hidden="true"></i> <i onclick="update('.$account['Id'].')" class="fa fa-pencil-square-o" aria-hidden="true"></i> </td></tr>';
+
          }
          ?>
        </table>
