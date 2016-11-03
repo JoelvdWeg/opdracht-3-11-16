@@ -61,6 +61,19 @@ td{
   color: black;
 }
 
+.btn-default {
+  text-shadow: 0 1px 0 #fff;
+  background-image: none!important;
+  filter: none!important;
+  background-repeat: repeat-x;
+  border-color: #dbdbdb;
+  border-color: #ccc;
+  width: 100%;
+}
+
+.btn-default:hover{
+  background: #eee!important;
+}
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */

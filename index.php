@@ -104,14 +104,14 @@
         <label for="exampleInputPort1">Port</label>
         <input type="name" class="form-control" name="Port" id="exampleInputPort1" value="' .$account['Port']. '">
       </div>
-      <input type="submit" name="submit">
+      <div class="modal-footer">
+        <input class="btn btn-default" type="submit" name="submit">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
      </form>
      </div>
 
-     <div class="modal-footer">
-       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-       <a href="?Id='.$account['Id'].'&action=update"><button type="submit" class="btn btn-default">Update</button></a>
-     </div>
+
    </div>
  </div>
 </div>
