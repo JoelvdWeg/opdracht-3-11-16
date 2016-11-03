@@ -100,8 +100,6 @@
              <li>'.$account['Password']. '</li>
              <li>'.$account['Server']. '</li>
              <li>'.$account['Port']. '</li>
-
-
         </ul>
       </div>
       <div class="modal-footer">
