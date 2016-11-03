@@ -23,11 +23,21 @@
          <link rel="stylesheet" href="assets/css/font-awesome.min.css">
          <link rel="stylesheet" href="assets/css/main.css">
 
-         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+
+        <!-- jquery data table -->
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
+
+      <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
      </head>
      <body>
        <div  class="container">
-         <table>
+         <table id="table_id" class="display">
            <tr>
              <th>Name</th>
              <th>Company Name</th>
@@ -47,16 +57,60 @@
           echo '<td>'.$account['Password']. '</td>';
           echo '<td>'.$account['Server']. '</td>';
           echo '<td>'.$account['Port']. '</td>';
-          echo '<td> <a href="delete.php?Id='.$account['Id'].'"><i onclick="delete('.$account['Id'].')" class="fa fa-trash-o fa-lg " aria-hidden="true"></i></a> <i onclick="update('.$account['Id'].')" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> </td></tr>';
+          echo '<td> <i data-toggle="modal" data-target="#Delete" class="fa fa-trash-o fa-lg " aria-hidden="true"></i> <i onclick="update('.$account['Id'].')" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> </td></tr>';
 
          }
          ?>
        </table>
-     </div>
+
+<!-- Modal -->
+<div class="modal fade" id="Delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">are you sure you want to delete?</h4>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <?php
+            foreach ($gegevens as $account) {
+             echo '<li>' .$account['Name']. '</li>' ;
+             echo '<li>'.$account['Company Name']. '</li>';
+             echo '<li>'.$account['Domain Name']. '</li>';
+             echo '<li>'.$account['User Name']. '</li>';
+             echo '<li>'.$account['Password']. '</li>';
+             echo '<li>'.$account['Server']. '</li>';
+             echo '<li>'.$account['Port']. '</li>';
+           }
+           ?>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a href="#"><button type="button" class="btn btn-default">Delete</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
 
      <script>
 
-     $('#myModal').modal('show');
+    //  $('#myModal').modal('show');
+        $(document).ready( function () {
+          $('#table_id').DataTable();
+        } );
+        $('#table_id').DataTable( {
+            paging: false
+        } );
+        $('#table_id').DataTable( {
+            scrollY: 400
+        } );
+
+        $('#table_id').DataTable( {
+            paging: false,
+            scrollY: 400
+        } );
      </script>
      </body>
  </html>

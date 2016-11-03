@@ -2,6 +2,11 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
+
+a{
+  text-decoration: none;
+  color: black;
+}
 input{
   border: 1px solid #ccc!important;
   border-radius: 0px!important;
@@ -27,13 +32,18 @@ td{
   text-align: center;
   width: 150px;
   border: 1px solid #888888;
-  
+
 
 }
 .Form{
   background: #eee;
   border: 1px solid #888888;
   padding: 10px;
+}
+
+.modal-footer .btn+.btn {
+    margin-top: 10px;
+    margin-left: 0px;
 }
 
 /* ==========================================================================
