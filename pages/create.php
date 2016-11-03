@@ -1,3 +1,15 @@
+<?php
+include('classes/db_class.php');
+if(isset($_POST['submit'])){
+  $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
+  $db->dbinsert('`Name`, `Company Name`, `Domain Name`, `User Name`, `Password`, `Server`, `Port`', "'".$_POST['Name']."', '".$_POST['Company']."', '".$_POST['Domain']."', '".$_POST['Username']."', '".$_POST['Password']."', '".$_POST['Server']."', '".$_POST['Port'])
+
+
+  header('Location: index.php');
+}
+
+?>
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -35,7 +47,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputUser1">User Name</label>
-              <input type="name" class="form-control" name="Name" id="exampleInputUser1" placeholder="User Name">
+              <input type="name" class="form-control" name="Username" id="exampleInputUser1" placeholder="User Name">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
