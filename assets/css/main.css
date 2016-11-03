@@ -3,10 +3,10 @@ body {
     padding-bottom: 20px;
 }
 
-a{
+/*a{
   text-decoration: none;
   color: black;
-}
+}*/
 input{
   border: 1px solid #ccc!important;
   border-radius: 0px!important;
@@ -44,6 +44,21 @@ td{
 .modal-footer .btn+.btn {
     margin-top: 10px;
     margin-left: 0px;
+}
+.creat{
+  margin-top: 15px;
+}
+.create{
+  padding: 6px 8px;
+  background: #eee;
+  border: 1px solid #888888;
+  text-decoration: none;
+  color: black;
+}
+
+.create:hover{
+  background: white;
+  color: black;
 }
 
 /* ==========================================================================
