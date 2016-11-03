@@ -19,41 +19,33 @@
      </head>
      <body>
        <div  class="container">
-         <div class="col-lg-4 col-lg-offset-4 Form">
-           <form>
-             <div class="form-group">
-               <label for="exampleInputName1">Name</label>
-               <input type="name" class="form-control" name="Name" id="exampleInputName1" placeholder="Name">
-             </div>
-             <div class="form-group">
-               <label for="exampleInputCompany1">Company</label>
-               <input type="name" class="form-control" name="Company" id="exampleInputCompany1" placeholder="Company">
-             </div>
-             <div class="form-group">
-               <label for="exampleInputDomain1">Domain Name</label>
-               <input type="name" class="form-control" name="Domain" id="exampleInputDomain1" placeholder="Domain Name">
-             </div>
-             <div class="form-group">
-               <label for="exampleInputUser1">User Name</label>
-               <input type="name" class="form-control" name="Name" id="exampleInputUser1" placeholder="User Name">
-             </div>
-             <div class="form-group">
-               <label for="exampleInputPassword1">Password</label>
-               <input type="password" class="form-control" name="Password" id="exampleInputPassword1" placeholder="Password">
-             </div>
-             <div class="form-group">
-               <label for="exampleInputServer1">Server/Host</label>
-               <input type="name" class="form-control" name="Server" id="exampleInputServer1" placeholder="Server/Host">
-             </div>
-             <div class="form-group">
-               <label for="exampleInputPort1">Port</label>
-               <input type="name" class="form-control" name="Port" id="exampleInputPort1" placeholder="Port">
-             </div>
-             <button type="submit" name="submit" class="btn btn-default">Submit</button>
-           </form>
-       </div>
+         <?php
+         $con=mysqli_connect("localhost","root","usbw","project");
+         // Check connection
+         if (mysqli_connect_errno())
+           {
+             echo "Failed to connect to MySQL: " . mysqli_connect_error();
+           }
+
+         $result = mysqli_query($con,"SELECT * FROM Persons");
+
+         echo "<table border='1'>
+         <tr>
+         <th>Firstname</th>
+         <th>Lastname</th>
+         </tr>";
+
+         while($row = mysqli_fetch_array($result))
+           {
+             echo "<tr>";
+             echo "<td>" . $row['FirstName'] . "</td>";
+             echo "<td>" . $row['LastName'] . "</td>";
+             echo "</tr>";
+           }
+            echo "</table>";
+
+         mysqli_close($con);
+         ?>
      </div>
      </body>
  </html>
-
- <html>
