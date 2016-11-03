@@ -19,7 +19,7 @@
      </head>
      <body>
        <div  class="container">
-         <div class="col-lg-4 col-lg-offset-4">
+         <div class="col-lg-4 col-lg-offset-4 Form">
            <form>
              <div class="form-group">
                <label for="exampleInputName1">Name</label>
@@ -49,9 +49,9 @@
                <label for="exampleInputPort1">Port</label>
                <input type="name" class="form-control" name="Port" id="exampleInputPort1" placeholder="Port">
              </div>
-             <button type="submit" class="btn btn-default">Submit</button>
+             <button type="submit" name="submit" class="btn btn-default">Submit</button>
            </form>
-       <div>
+       </div>
      </div>
      </body>
  </html>
