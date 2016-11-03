@@ -45,7 +45,7 @@ class db
     }
   }
   public function dbupdate($table, $changes, $id ){
-    $sql = 'UPDATE '.$table.' SET '.$changes.' WHERE id=`'.$id.'`';
+    $sql = "UPDATE `".$table."` SET ".$changes." WHERE `id`=".$id;
       if(mysqli_query($this->conn, $sql)){
         return '<div style=" color: green">Done updating<br></div>';
       }

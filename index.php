@@ -3,6 +3,7 @@
 
   $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
   $gegevens = $db->dbselect(' * ', 'users');
+
  ?>
 
  <!doctype html>
@@ -74,7 +75,7 @@
      </div>
 
      <div class="modal-body">
-     <form>
+     <form action="pages/update.php?Id='.$account['Id'].'" method="post">
       <div class="form-group">
         <label for="exampleInputName1">Name</label>
         <input type="name" class="form-control" name="Name" id="exampleInputName1" value="' .$account['Name']. '">
@@ -93,7 +94,7 @@
       </div>
       <div class="form-group">
         <label for="exampleInputpass1">Password</label>
-        <input type="password" class="form-control" name="Passsword" id="exampleInputPass1" value="' .$account['Password']. '">
+        <input type="name" class="form-control" name="Password" id="exampleInputPass1" value="' .$account['Password']. '">
       </div>
       <div class="form-group">
         <label for="exampleInputServer1">Server/host</label>
@@ -103,12 +104,13 @@
         <label for="exampleInputPort1">Port</label>
         <input type="name" class="form-control" name="Port" id="exampleInputPort1" value="' .$account['Port']. '">
       </div>
+      <input type="submit" name="submit">
      </form>
      </div>
 
      <div class="modal-footer">
        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-       <a href="pages/update.php?Id='.$account['Id'].'"><button type="button" class="btn btn-default">Update</button></a>
+       <a href="?Id='.$account['Id'].'&action=update"><button type="submit" class="btn btn-default">Update</button></a>
      </div>
    </div>
  </div>
