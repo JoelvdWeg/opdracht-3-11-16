@@ -3,9 +3,9 @@
   if(isset($_GET['Id'])){
     $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
     $db->dbdelete('users', $_GET['Id']);
-
+    header('Location: index.php');
   }
   else {
-    echo 'mee=eefwfwf '
+    header('Location: index.php');
   }
  ?>

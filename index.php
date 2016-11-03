@@ -3,12 +3,6 @@
 
   $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
   $gegevens = $db->dbselect(' * ', 'users');
-
-  if(isset($_GET['Id']) && $_GET['action'] == 'delete'){
-    $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
-    $db->dbdelete('users', $_GET['Id']);
-    header('Location: index.php');
-  }
  ?>
 
  <!doctype html>
@@ -78,35 +72,18 @@
      <div class="modal-header">
        <h4 class="modal-title" id="myModalLabel">are you sure you want to delete?</h4>
      </div>
+
      <div class="modal-body">
 
      </div>
+
      <div class="modal-footer">
        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-       <a href="?Id='.$account['Id'].'&action=create"><button type="button" class="btn btn-default">Update</button></a>
+       <a href="pages/update.php?Id='.$account['Id'].'"><button type="button" class="btn btn-default">Update</button></a>
      </div>
    </div>
  </div>
 </div>
-
- <!-- create  -->
-<div class="modal fade" id="cre'.$account['Id'].'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">are you sure you want to delete?</h4>
-      </div>
-      <div class="modal-body">
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <a href="?Id='.$account['Id'].'&action=create"><button type="button" class="btn btn-default">Create</button></a>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- delete  -->
 <div class="modal fade" id="del'.$account['Id'].'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -129,7 +106,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <a href="?Id='.$account['Id'].'&action=delete"><button type="button" class="btn btn-default">Delete</button></a>
+        <a href="pages/delete.php?Id='.$account['Id'].'"><button type="button" class="btn btn-default">Delete</button></a>
       </div>
     </div>
   </div>
