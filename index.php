@@ -2,7 +2,7 @@
   include('classes/db_class.php');
 
   $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
-  $gegevens = $db->dbselect('*', 'users');
+  $gegevens = $db->dbselect(' * ', 'users');
  ?>
 
  <!doctype html>
@@ -47,7 +47,7 @@
           echo '<td>'.$account['Password']. '</td>';
           echo '<td>'.$account['Server']. '</td>';
           echo '<td>'.$account['Port']. '</td>';
-          echo '<td> <i onclick="delete('.$account['Id'].')" class="fa fa-trash-o" aria-hidden="true"></i> <i onclick="update('.$account['Id'].')" class="fa fa-pencil-square-o" aria-hidden="true"></i> </td></tr>';
+          echo '<td> <i onclick="delete('.$account['Id'].')" class="fa fa-trash-o fa-lg " aria-hidden="true"></i> <i onclick="update('.$account['Id'].')" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> </td></tr>';
 
          }
          ?>

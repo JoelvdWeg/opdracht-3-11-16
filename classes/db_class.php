@@ -22,7 +22,7 @@ class db
     return $array;
   }
   public function dbselect($select, $from){
-    $array = $this->query2assoc('SELECT '.$select.' FROM'. $from);
+    $array = $this->query2assoc('SELECT '.$select.' FROM `'. $from.'`');
     return $array;
   }
   public function dbinsert($insert, $value)
