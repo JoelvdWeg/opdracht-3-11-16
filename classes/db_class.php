@@ -27,7 +27,7 @@ class db
   }
   public function dbinsert($insert, $value)
   {
-    $sql = 'INSERT INTO '.$insert.' VALUES ('.$value.')';
+    $sql = "INSERT INTO ".$insert." VALUES (".$value.")";
       if(mysqli_query($this->conn, $sql)){
         return '<div style=" color: green">Done inserting<br></div>';
       }

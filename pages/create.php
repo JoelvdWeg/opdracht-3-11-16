@@ -1,11 +1,11 @@
 <?php
-include('classes/db_class.php');
+include('../classes/db_class.php');
 if(isset($_POST['submit'])){
   $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
-  $db->dbinsert('`Name`, `Company Name`, `Domain Name`, `User Name`, `Password`, `Server`, `Port`', "'".$_POST['Name']."', '".$_POST['Company']."', '".$_POST['Domain']."', '".$_POST['Username']."', '".$_POST['Password']."', '".$_POST['Server']."', '".$_POST['Port'])
+  $db->dbinsert("`project 3 nov`.`users` (`Name`, `Company Name`, `Domain Name`, `User Name`, `Password`, `Server`, `Port`)", "'".$_POST["Name"]."',  '".$_POST["Company"]."',  '".$_POST["Domain"]."',  '".$_POST["Username"]."',  '".$_POST["Password"]."',  '".$_POST["Server"]."',  '".$_POST["Port"]."'");
 
 
-  header('Location: index.php');
+  header('Location: ../index.php');
 }
 
 ?>
@@ -23,16 +23,16 @@ if(isset($_POST['submit'])){
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="../assets/css/main.css">
 
-        <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="../assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
       <div  class="container">
         <div class="col-lg-4 col-lg-offset-4 Form">
-          <form>
+          <form method="post">
             <div class="form-group">
               <label for="exampleInputName1">Name</label>
               <input type="name" class="form-control" name="Name" id="exampleInputName1" placeholder="Name">
