@@ -1,4 +1,4 @@
-<?php 
+<?php
 class sitemap_model extends requestHandler{
 
 	public function getAValue($table){
@@ -7,4 +7,5 @@ class sitemap_model extends requestHandler{
 		$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $rows;
 	}
+}
 ?>
