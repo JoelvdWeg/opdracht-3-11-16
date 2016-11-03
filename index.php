@@ -47,7 +47,7 @@
           echo '<td>'.$account['Password']. '</td>';
           echo '<td>'.$account['Server']. '</td>';
           echo '<td>'.$account['Port']. '</td>';
-          echo '<td>'.$account['<a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a><a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>']. '</td></tr>';
+          echo '<td> <i onclick="delete('.$account['Id'].')" class="fa fa-trash-o" aria-hidden="true"></i> <i onclick="update('.$account['Id'].')" class="fa fa-pencil-square-o" aria-hidden="true"></i> </td></tr>';
 
          }
          ?>

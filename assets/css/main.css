@@ -14,7 +14,7 @@ button{
 }
 
 
-th,{
+th{
   padding: 10px 0px!important;
   text-align: center;
   width: 150px;
@@ -22,7 +22,7 @@ th,{
   background: #eee;
 }
 
-tr{
+td{
   padding: 10px 0px!important;
   text-align: center;
   width: 150px;
