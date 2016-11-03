@@ -1,3 +1,10 @@
+<?php
+  include('classes/db_class.php');
+
+  $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
+  $gegevens = $db->dbinsert('*', 'users');
+ ?>
+
  <!doctype html>
  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -19,33 +26,22 @@
      </head>
      <body>
        <div  class="container">
+         <table>
+           <tr>
+             <th>Name</th>
+             <th>Company Name</th>
+             <th>Domain Name</th>
+             <th>Username</th>
+             <th>Password</th>
+             <th>Server/Host</th>
+             <th>Port</th>
+           </tr>
          <?php
-         $con=mysqli_connect("localhost","root","usbw","project");
-         // Check connection
-         if (mysqli_connect_errno())
-           {
-             echo "Failed to connect to MySQL: " . mysqli_connect_error();
-           }
-
-         $result = mysqli_query($con,"SELECT * FROM Persons");
-
-         echo "<table border='1'>
-         <tr>
-         <th>Firstname</th>
-         <th>Lastname</th>
-         </tr>";
-
-         while($row = mysqli_fetch_array($result))
-           {
-             echo "<tr>";
-             echo "<td>" . $row['FirstName'] . "</td>";
-             echo "<td>" . $row['LastName'] . "</td>";
-             echo "</tr>";
-           }
-            echo "</table>";
-
-         mysqli_close($con);
+         foreach ($gegevens as $account) {
+           $account['username'] ;
+         }
          ?>
+       </table>
      </div>
      </body>
  </html>
