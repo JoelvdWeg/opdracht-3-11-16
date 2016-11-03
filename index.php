@@ -3,6 +3,12 @@
 
   $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
   $gegevens = $db->dbselect(' * ', 'users');
+
+  if(isset($_GET['Id']) && $_GET['action'] == 'delete'){
+    $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
+    $db->dbdelete('users', $_GET['Id']);
+    header('Location: index.php');
+  }
  ?>
 
  <!doctype html>
@@ -46,7 +52,7 @@
              <th>Password</th>
              <th>Server/Host</th>
              <th>Port</th>
-             <th>Actions</th> 
+             <th>Actions</th>
            </tr>
          <?php
          foreach ($gegevens as $account) {
@@ -57,14 +63,52 @@
           echo '<td>'.$account['Password']. '</td>';
           echo '<td>'.$account['Server']. '</td>';
           echo '<td>'.$account['Port']. '</td>';
-          echo '<td> <i data-toggle="modal" data-target="#Delete" class="fa fa-trash-o fa-lg " aria-hidden="true"></i> <i onclick="update('.$account['Id'].')" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> </td></tr>';
-
+          echo '<td> <i data-toggle="modal" data-target="#del'.$account['Id'].'" class="fa fa-trash-o fa-lg " aria-hidden="true"></i> <i data-toggle="modal" data-target="#upd'.$account['Id'].'" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> </td></tr>';
          }
          ?>
        </table>
 
+       <?php
+         foreach ($gegevens as $account) {echo '
 <!-- Modal -->
-<div class="modal fade" id="Delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- update -->
+<div class="modal fade" id="upd'.$account['Id'].'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ <div class="modal-dialog" role="document">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h4 class="modal-title" id="myModalLabel">are you sure you want to delete?</h4>
+     </div>
+     <div class="modal-body">
+
+     </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       <a href="?Id='.$account['Id'].'&action=create"><button type="button" class="btn btn-default">Update</button></a>
+     </div>
+   </div>
+ </div>
+</div>
+
+ <!-- create  -->
+<div class="modal fade" id="cre'.$account['Id'].'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">are you sure you want to delete?</h4>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a href="?Id='.$account['Id'].'&action=create"><button type="button" class="btn btn-default">Create</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- delete  -->
+<div class="modal fade" id="del'.$account['Id'].'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -72,27 +116,26 @@
       </div>
       <div class="modal-body">
         <ul>
-          <?php
-            foreach ($gegevens as $account) {
-             echo '<li>' .$account['Name']. '</li>' ;
-             echo '<li>'.$account['Company Name']. '</li>';
-             echo '<li>'.$account['Domain Name']. '</li>';
-             echo '<li>'.$account['User Name']. '</li>';
-             echo '<li>'.$account['Password']. '</li>';
-             echo '<li>'.$account['Server']. '</li>';
-             echo '<li>'.$account['Port']. '</li>';
-           }
-           ?>
+          <li>' .$account['Name']. '</li>
+            <li>'.$account['Company Name']. '</li>
+            <li>'.$account['Domain Name']. '</li>
+             <li>'.$account['User Name']. '</li>
+             <li>'.$account['Password']. '</li>
+             <li>'.$account['Server']. '</li>
+             <li>'.$account['Port']. '</li>
+
+
         </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <a href="#"><button type="button" class="btn btn-default">Delete</button></a>
+        <a href="?Id='.$account['Id'].'&action=delete"><button type="button" class="btn btn-default">Delete</button></a>
       </div>
     </div>
   </div>
 </div>
-
+';}
+?>
 
      <script>
      </script>
