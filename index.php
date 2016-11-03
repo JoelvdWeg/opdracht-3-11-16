@@ -19,14 +19,21 @@
     $pdf->AddPage();
     $html = '<html>
     <head></head>
-    <body><table border="1">
-    <tr><th>name</th>
-    <th>company</th></tr>
-    <tr>
-    <td>hello</td>
-    <td>xx technologies</td>
-    </tr>
-    </table>
+    <body>
+
+    ';
+    foreach ($gegevens as $account) {$html.= '
+    <ul>
+      <li>' .$account['Name']. '</li>
+        <li>'.$account['Company Name']. '</li>
+        <li>'.$account['Domain Name']. '</li>
+         <li>'.$account['User Name']. '</li>
+         <li>'.$account['Password']. '</li>
+         <li>'.$account['Server']. '</li>
+         <li>'.$account['Port']. '</li>
+         </ul>
+         ';};
+    $html.='
     </body>
     </html>';
     $pdf->writeHTML($html, true, 0, true, 0);
