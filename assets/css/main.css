@@ -14,12 +14,20 @@ button{
 }
 
 
-th{
+th,{
   padding: 10px 0px!important;
   text-align: center;
   width: 150px;
   border: 1px solid #888888;
   background: #eee;
+}
+
+tr{
+  padding: 10px 0px!important;
+  text-align: center;
+  width: 150px;
+  border: 1px solid #888888;
+  color: #888;
 }
 .Form{
   background: #eee;
