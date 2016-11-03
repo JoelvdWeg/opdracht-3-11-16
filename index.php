@@ -37,7 +37,7 @@
      </head>
      <body>
        <div  class="container">
-         <table id="table_id" class="display">
+         <table>
            <tr>
              <th>Name</th>
              <th>Company Name</th>
@@ -95,22 +95,6 @@
 
 
      <script>
-
-    //  $('#myModal').modal('show');
-        $(document).ready( function () {
-          $('#table_id').DataTable();
-        } );
-        $('#table_id').DataTable( {
-            paging: false
-        } );
-        $('#table_id').DataTable( {
-            scrollY: 400
-        } );
-
-        $('#table_id').DataTable( {
-            paging: false,
-            scrollY: 400
-        } );
      </script>
      </body>
  </html>
