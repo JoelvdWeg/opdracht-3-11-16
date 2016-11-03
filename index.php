@@ -47,11 +47,16 @@
           echo '<td>'.$account['Password']. '</td>';
           echo '<td>'.$account['Server']. '</td>';
           echo '<td>'.$account['Port']. '</td>';
-          echo '<td> <i onclick="delete('.$account['Id'].')" class="fa fa-trash-o fa-lg " aria-hidden="true"></i> <i onclick="update('.$account['Id'].')" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> </td></tr>';
+          echo '<td> <a href="delete.php?Id='.$account['Id'].'"><i onclick="delete('.$account['Id'].')" class="fa fa-trash-o fa-lg " aria-hidden="true"></i></a> <i onclick="update('.$account['Id'].')" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> </td></tr>';
 
          }
          ?>
        </table>
      </div>
+
+     <script>
+
+     $('#myModal').modal('show');
+     </script>
      </body>
  </html>
