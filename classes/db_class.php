@@ -36,10 +36,7 @@ class db
     }
   }
   public function dbdelete($table, $id ){
-
     $sql = 'DELETE FROM `'.$table.'` WHERE Id='.$id.' ';
-
-
       if(mysqli_query($this->conn, $sql)){
         return '<div style=" color: green">Done deleting<br></div>';
       }

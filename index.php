@@ -46,7 +46,7 @@
              <th>Password</th>
              <th>Server/Host</th>
              <th>Port</th>
-             <th>Actions</th>
+             <th>Actions</th> 
            </tr>
          <?php
          foreach ($gegevens as $account) {
