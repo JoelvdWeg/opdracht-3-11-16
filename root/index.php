@@ -22,22 +22,32 @@
         <div class="col-lg-4 col-lg-offset-4">
           <form>
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              <label for="exampleInputName1">Name</label>
+              <input type="name" class="form-control" name="Name" id="exampleInputName1" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputCompany1">Company</label>
+              <input type="name" class="form-control" name="Company" id="exampleInputCompany1" placeholder="Company">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputDomain1">Domain Name</label>
+              <input type="name" class="form-control" name="Domain" id="exampleInputDomain1" placeholder="Domain Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputUser1">User Name</label>
+              <input type="name" class="form-control" name="Name" id="exampleInputUser1" placeholder="User Name">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input type="password" class="form-control" name="Password" id="exampleInputPassword1" placeholder="Password">
             </div>
             <div class="form-group">
-              <label for="exampleInputFile">File input</label>
-              <input type="file" id="exampleInputFile">
-              <p class="help-block">Example block-level help text here.</p>
+              <label for="exampleInputServer1">Server/Host</label>
+              <input type="name" class="form-control" name="Server" id="exampleInputServer1" placeholder="Server/Host">
             </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> Check me out
-              </label>
+            <div class="form-group">
+              <label for="exampleInputPort1">Port</label>
+              <input type="name" class="form-control" name="Port" id="exampleInputPort1" placeholder="Port">
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
           </form>
