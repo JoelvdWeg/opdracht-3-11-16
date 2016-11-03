@@ -74,7 +74,15 @@
      </div>
 
      <div class="modal-body">
-
+     <ul>
+       <li>' .$account['Name']. '</li>
+         <li>'.$account['Company Name']. '</li>
+         <li>'.$account['Domain Name']. '</li>
+          <li>'.$account['User Name']. '</li>
+          <li>'.$account['Password']. '</li>
+          <li>'.$account['Server']. '</li>
+          <li>'.$account['Port']. '</li>
+     </ul>
      </div>
 
      <div class="modal-footer">
@@ -111,8 +119,9 @@
 </div>
 ';}
 ?>
-
-<a href="new.php"><i class="fa fa-plus" aria-hidden="true"></i></a>
+<div  class="creat">
+<a class="create" href="pages/create.php"><i class="fa fa-plus" aria-hidden="true"></i></a>
+</div>
      <script>
      </script>
      </body>
