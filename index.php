@@ -137,6 +137,7 @@
 ';}
 ?>
 
+<a href="new.php"><i class="fa fa-plus" aria-hidden="true"></i></a>
      <script>
      </script>
      </body>
