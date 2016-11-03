@@ -1,22 +1,3 @@
-<?php
- //   $startTime = microtime(true);
-    // Your content to test
-
-function class_loader($class){
-require('classes/' . $class . '.php');//---- might be a badly named model if gives error here
-}
-spl_autoload_register('class_loader');
-
-$rh = new requestHandler();
-
-$rh->getContent();
-echo$rh->output;
-
-
- //$endTime = microtime(true);
- //   $elapsed = $endTime - $startTime;
- //   echo "Execution time : $elapsed seconds";
-?>
  <!doctype html>
  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
