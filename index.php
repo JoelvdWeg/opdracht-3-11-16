@@ -70,19 +70,40 @@
  <div class="modal-dialog" role="document">
    <div class="modal-content">
      <div class="modal-header">
-       <h4 class="modal-title" id="myModalLabel">are you sure you want to delete?</h4>
+       <h4 class="modal-title" id="myModalLabel">Edit</h4>
      </div>
 
      <div class="modal-body">
-     <ul>
-       <li>' .$account['Name']. '</li>
-         <li>'.$account['Company Name']. '</li>
-         <li>'.$account['Domain Name']. '</li>
-          <li>'.$account['User Name']. '</li>
-          <li>'.$account['Password']. '</li>
-          <li>'.$account['Server']. '</li>
-          <li>'.$account['Port']. '</li>
-     </ul>
+     <form>
+      <div class="form-group">
+        <label for="exampleInputName1">Name</label>
+        <input type="name" class="form-control" name="Name" id="exampleInputName1" value="' .$account['Name']. '">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputCompany1">Company Name</label>
+        <input type="name" class="form-control" name="Company" id="exampleInputCompany1" value="' .$account['Company Name']. '">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputDomain1">Domain Name</label>
+        <input type="name" class="form-control" name="Domain" id="exampleInputDomain1" value="' .$account['Domain Name']. '">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputUser1">User Name</label>
+        <input type="name" class="form-control" name="Username" id="exampleInputNUser1" value="' .$account['User Name']. '">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputpass1">Password</label>
+        <input type="password" class="form-control" name="Passsword" id="exampleInputPass1" value="' .$account['Password']. '">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputServer1">Server/host</label>
+        <input type="name" class="form-control" name="Server" id="exampleInputServer1" value="' .$account['Server']. '">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPort1">Port</label>
+        <input type="name" class="form-control" name="Port" id="exampleInputPort1" value="' .$account['Port']. '">
+      </div>
+     </form>
      </div>
 
      <div class="modal-footer">
