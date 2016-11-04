@@ -5,7 +5,7 @@
   $gegevens = $db->dbselect(' * ', 'users');
 
 
-  if( 0 == 1){
+  if(isset($_POST["pdf"])){
     require_once('tcpdf.php');
     $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
     $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
@@ -94,7 +94,7 @@
           echo '<td>'.$account['Password']. '</td>';
           echo '<td>'.$account['Server']. '</td>';
           echo '<td>'.$account['Port']. '</td>';
-          echo '<td> <i data-toggle="modal" data-target="#del'.$account['Id'].'" class="fa fa-trash-o fa-lg " aria-hidden="true"></i> <i data-toggle="modal" data-target="#upd'.$account['Id'].'" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> <i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i> </td></tr>';
+          echo '<td> <i data-toggle="modal" data-target="#del'.$account['Id'].'" class="fa fa-trash-o fa-lg " aria-hidden="true"></i> <i data-toggle="modal" data-target="#upd'.$account['Id'].'" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> <i data-toggle="modal" data-target="#pdf'.$account['Id'].'" class="fa fa-file-text-o fa-lg" aria-hidden="true"></i> </td></tr>';
          }
          ?>
        </table>
@@ -172,6 +172,31 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <a href="pages/delete.php?Id='.$account['Id'].'"><button type="button" class="btn btn-default">Delete</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- PDF  -->
+<div class="modal fade" id="pdf'.$account['Id'].'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">PDF</h4>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>' .$account['Name']. '</li>
+            <li>'.$account['Company Name']. '</li>
+            <li>'.$account['Domain Name']. '</li>
+             <li>'.$account['User Name']. '</li>
+             <li>'.$account['Password']. '</li>
+             <li>'.$account['Server']. '</li>
+             <li>'.$account['Port']. '</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" name="pdf" class="btn btn-default">Download PDF</button>
       </div>
     </div>
   </div>
