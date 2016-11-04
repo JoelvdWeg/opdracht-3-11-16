@@ -49,8 +49,7 @@ if(isset($_POST['Send'])){
   ;};
   $pdf->writeHTML($html, true, 0, true, 0);
   $pdf->lastPage();
-
-
+  $pdf->Output('pdf.pdf', 'E');
 
   $mail = new PHPMailer();
   $mail->isSMTP();
@@ -65,7 +64,7 @@ if(isset($_POST['Send'])){
   $mail->addAddress($_POST['Email'], 'Name');
   $mail->isHTML(true);
 
-  $mail->AddAttachment();
+  $mail->AddAttachment('../pdf.pdf');
   $mail->Subject = $_POST['Subject'];
   $mail->Body    = '<html>
   <head></head>
