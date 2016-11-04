@@ -5,7 +5,11 @@ include('../classes/db_class.php');
 if(empty($_SESSION['result'])){$_SESSION['result'] = '';}
 
 if(isset($_POST['submit'])){
-  $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
+  $dbh = new PDO("mysql:host=localhost:3307;dbname=project 3 nov;","root","usbw");
+  $sth = $dbh->prepare('INSERT INTO `project 3 nov`.`users` (`Name`, `Company Name`, `Domain Name`, `User Name`, `Password`, `Server`, `Port`)
+    VALUES (:Name , :Company, :Domain, :Username, :Password, :Server, :Port)');
+
+  //$db = new db('localhost', 'root', 'usbw', 'project 3 nov');
   $_SESSION['result'] = '';
   $regexname = "/^[a-zA-Z ]{1,30}$/";
   $regexcompany = "/^[a-zA-Z0-9 ]{1,40}$/";
@@ -48,8 +52,16 @@ if(isset($_POST['submit'])){
   if($count == 0 AND $gebruikt == 0){
     $passwordcreate = $_POST['Password'];
     $passwordcreate = crypt($passwordcreate, $salt);
-    $insert = $db->dbinsert("`project 3 nov`.`users` (`Name`, `Company Name`, `Domain Name`, `User Name`, `Password`, `Server`, `Port`)", "'".$_POST["Name"]."',  '".$_POST["Company"]."',  '".$_POST["Domain"]."',  '".$_POST["Username"]."',  '".$passwordcreate."',  '".$_POST["Server"]."',  '".$_POST["Port"]."'");
-    $_SESSION['result'] = $insert;
+    $sth->bindParam(':Name', $_POST['Name']);
+    $sth->bindParam(':Company', $_POST['Company']);
+    $sth->bindParam(':Domain', $_POST['Domain']);
+    $sth->bindParam(':Username', $_POST['Username']);
+    $sth->bindParam(':Password', $_POST['Password']);
+    $sth->bindParam(':Server', $_POST['Server']);
+    $sth->bindParam(':Port', $_POST['Port']);
+    $sth->execute();
+    //$insert = $db->dbinsert("`project 3 nov`.`users` (`Name`, `Company Name`, `Domain Name`, `User Name`, `Password`, `Server`, `Port`)", "'".$_POST["Name"]."',  '".$_POST["Company"]."',  '".$_POST["Domain"]."',  '".$_POST["Username"]."',  '".$passwordcreate."',  '".$_POST["Server"]."',  '".$_POST["Port"]."'");
+    //$_SESSION['result'] = $insert;
     header('Location: ../index.php');
   }
 }
