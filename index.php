@@ -69,8 +69,8 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
 
         <!-- Latest compiled JavaScript -->
         <script src="assets/js/vendor/bootstrap.min.js"></script>
-
-        <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs-3.3.6/jq-2.2.3/dt-1.10.12/b-1.2.2/r-2.1.0/sc-1.4.2/se-1.2.0/datatables.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs-3.3.6/dt-1.10.12/datatables.min.css"/>
      </head>
      <body>
        <div  class="container">
@@ -84,7 +84,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
              <th>Password</th>
              <th>Server/Host</th>
              <th>Port</th>
-             <th>Actions</th>
+             <th  class="right">Actions</th>
            </tr>
          </thead>
          <tbody>
@@ -97,7 +97,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
           echo '<td>'.$account['Password']. '</td>';
           echo '<td>'.$account['Server']. '</td>';
           echo '<td>'.$account['Port']. '</td>';
-          echo '<td> <i data-toggle="modal" data-target="#del'.$account['Id'].'" class="fa fa-trash-o fa-lg " aria-hidden="true"></i> <i data-toggle="modal" data-target="#upd'.$account['Id'].'" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> <a class="pdf" href="?pdf=true&Id='.$account['Id'].'" ><i data-toggle="modal" data-target="" class="fa fa-file-text-o fa-lg" aria-hidden="true"></i> </td></tr>';
+          echo '<td class="right"> <i data-toggle="modal" data-target="#del'.$account['Id'].'" class="fa fa-trash-o fa-lg " aria-hidden="true"></i> <i data-toggle="modal" data-target="#upd'.$account['Id'].'" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> <a class="pdf" href="?pdf=true&Id='.$account['Id'].'" ><i data-toggle="modal" data-target="" class="fa fa-file-text-o fa-lg" aria-hidden="true"></i> </td></tr>';
          }
          ?>
          </tbody>
@@ -186,7 +186,8 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
 <a class="create" href="pages/create.php"><i class="fa fa-plus" aria-hidden="true"></i></a>
 </div>
 <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
-<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs-3.3.6/jq-2.2.3/dt-1.10.12/b-1.2.2/r-2.1.0/sc-1.4.2/se-1.2.0/datatables.min.js"></script>
+
      <script>
       $(function(){
         $("#table").dataTable();
@@ -194,5 +195,3 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
      </script>
      </body>
  </html>
-
- 

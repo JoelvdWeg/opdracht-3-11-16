@@ -23,7 +23,10 @@ th{
   padding: 10px 0px!important;
   text-align: center;
   width: 150px;
-  border: 1px solid #888888;
+  max-width: 150px;
+  border-top: 1px solid #888888;
+  border-left: 1px solid #888888;
+  border-bottom: 1px solid #888888;
   background: #eee;
 }
 
@@ -31,9 +34,15 @@ td{
   padding: 10px 0px!important;
   text-align: center;
   width: 150px;
-  border: 1px solid #888888;
+  max-width: 150px;
+  overflow: hidden;
+  border-bottom: 1px solid #888888;
+  border-left: 1px solid #888888;
 }
 
+.right{
+  border-right: 1px solid #888888;
+}
 tr.odd{
   padding: 10px 0px!important;
   text-align: center;
@@ -63,6 +72,45 @@ table.dataTable tr.even td.sorting_1 {
 .dataTables_info {
     display: none!important;
 }
+table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.dataTable thead .sorting_asc_disabled, table.dataTable thead .sorting_desc_disabled {
+    cursor: pointer;
+    position: relative;
+    text-align: left;
+    padding-left: 5px!important;
+}
+
+.pagination>li:last-child>a, .pagination>li:last-child>span {
+    border-top-right-radius: 0px!important;
+    border-bottom-right-radius: 0px!important;
+    border-color: #888!important;
+    color: black!important;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    z-index: 3;
+    color: black!important;
+    cursor: default;
+    background-color: #ccc!important;
+    border-color: #888!important;
+}
+.pagination>li:first-child>a, .pagination>li:first-child>span {
+    margin-left: 0;
+    border-top-left-radius: 0px!important;
+    border-bottom-left-radius: 0px!important;
+    border-color: #888!important;
+    color: black!important;
+}
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: black!important;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #888888!important;
+}
+
 .Form{
   background: #eee;
   border: 1px solid #888888;
@@ -74,7 +122,8 @@ table.dataTable tr.even td.sorting_1 {
     margin-left: 0px;
 }
 .creat{
-  margin-top: 15px;
+  position: relative;
+  bottom: 38px;
 }
 .create{
   padding: 6px 8px;
