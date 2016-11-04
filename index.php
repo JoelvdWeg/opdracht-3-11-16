@@ -84,7 +84,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
              <th>Password</th>
              <th>Server/Host</th>
              <th>Port</th>
-             <th>Actions</th>
+             <th  class="right">Actions</th>
            </tr>
          </thead>
          <tbody>
@@ -97,7 +97,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
           echo '<td>'.$account['Password']. '</td>';
           echo '<td>'.$account['Server']. '</td>';
           echo '<td>'.$account['Port']. '</td>';
-          echo '<td> <i data-toggle="modal" data-target="#del'.$account['Id'].'" class="fa fa-trash-o fa-lg " aria-hidden="true"></i> <i data-toggle="modal" data-target="#upd'.$account['Id'].'" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> <a class="pdf" href="?pdf=true&Id='.$account['Id'].'" ><i data-toggle="modal" data-target="" class="fa fa-file-text-o fa-lg" aria-hidden="true"></i> </td></tr>';
+          echo '<td class="right"> <i data-toggle="modal" data-target="#del'.$account['Id'].'" class="fa fa-trash-o fa-lg " aria-hidden="true"></i> <i data-toggle="modal" data-target="#upd'.$account['Id'].'" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> <a class="pdf" href="?pdf=true&Id='.$account['Id'].'" ><i data-toggle="modal" data-target="" class="fa fa-file-text-o fa-lg" aria-hidden="true"></i> </td></tr>';
          }
          ?>
          </tbody>

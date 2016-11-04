@@ -24,7 +24,9 @@ th{
   text-align: center;
   width: 150px;
   max-width: 150px;
-  border: 1px solid #888888;
+  border-top: 1px solid #888888;
+  border-left: 1px solid #888888;
+  border-bottom: 1px solid #888888;
   background: #eee;
 }
 
@@ -34,9 +36,13 @@ td{
   width: 150px;
   max-width: 150px;
   overflow: hidden;
-  border: 1px solid #888888;
+  border-bottom: 1px solid #888888;
+  border-left: 1px solid #888888;
 }
 
+.right{
+  border-right: 1px solid #888888;
+}
 tr.odd{
   padding: 10px 0px!important;
   text-align: center;
