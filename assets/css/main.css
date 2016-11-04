@@ -32,8 +32,36 @@ td{
   text-align: center;
   width: 150px;
   border: 1px solid #888888;
+}
 
+tr.odd{
+  padding: 10px 0px!important;
+  text-align: center;
+  width: 150px;
+  border: 1px solid #888888;
+  background: white!important;
+}
 
+tr.even{
+  padding: 10px 0px!important;
+  text-align: center;
+  width: 150px;
+  border: 1px solid #888888;
+  background: #eee!important;
+}
+
+thead{
+  background: #ccc!important;
+}
+table.dataTable tr.odd td.sorting_1 {
+    background-color: white!important;
+}
+table.dataTable tr.even td.sorting_1 {
+    background-color: #eee!important;
+}
+
+.dataTables_info {
+    display: none!important;
 }
 .Form{
   background: #eee;

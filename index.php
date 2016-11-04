@@ -27,13 +27,13 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
       if($_GET['Id'] == $account['Id'])
     $html.= '
     <ul>
-      <li>' .$account['Name']. '</li>
-        <li>'.$account['Company Name']. '</li>
-        <li>'.$account['Domain Name']. '</li>
-         <li>'.$account['User Name']. '</li>
-         <li>'.$account['Password']. '</li>
-         <li>'.$account['Server']. '</li>
-         <li>'.$account['Port']. '</li>
+      <li>Name: ' .$account['Name']. '</li>
+        <li>Company Name: '.$account['Company Name']. '</li>
+        <li>Domain Name: '.$account['Domain Name']. '</li>
+         <li>User Name: '.$account['User Name']. '</li>
+         <li>Password: '.$account['Password']. '</li>
+         <li>Server: '.$account['Server']. '</li>
+         <li>Port: '.$account['Port']. '</li>
          </ul>
 
     </body>
@@ -70,14 +70,12 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
         <!-- Latest compiled JavaScript -->
         <script src="assets/js/vendor/bootstrap.min.js"></script>
 
-        <!-- jquery data table -->
-        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
-
-      <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
      </head>
      <body>
        <div  class="container">
-         <table>
+         <table id="table" class="stripe">
+           <thead>
            <tr>
              <th>Name</th>
              <th>Company Name</th>
@@ -88,6 +86,8 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
              <th>Port</th>
              <th>Actions</th>
            </tr>
+         </thead>
+         <tbody>
          <?php
          foreach ($gegevens as $account) {
           echo '<tr><td>' .$account['Name']. '</td>' ;
@@ -100,6 +100,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
           echo '<td> <i data-toggle="modal" data-target="#del'.$account['Id'].'" class="fa fa-trash-o fa-lg " aria-hidden="true"></i> <i data-toggle="modal" data-target="#upd'.$account['Id'].'" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> <a class="pdf" href="?pdf=true&Id='.$account['Id'].'" ><i data-toggle="modal" data-target="" class="fa fa-file-text-o fa-lg" aria-hidden="true"></i> </td></tr>';
          }
          ?>
+         </tbody>
        </table>
 
        <?php
@@ -184,7 +185,14 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
 <div  class="creat">
 <a class="create" href="pages/create.php"><i class="fa fa-plus" aria-hidden="true"></i></a>
 </div>
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
      <script>
+      $(function(){
+        $("#table").dataTable();
+      })
      </script>
      </body>
  </html>
+
+ 
