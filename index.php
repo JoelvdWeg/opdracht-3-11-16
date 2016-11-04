@@ -69,9 +69,6 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
 
         <!-- Latest compiled JavaScript -->
         <script src="assets/js/vendor/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs-3.3.6/jq-2.2.3/dt-1.10.12/b-1.2.2/r-2.1.0/sc-1.4.2/se-1.2.0/datatables.min.css"/>
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs-3.3.6/dt-1.10.12/datatables.min.css"/>
-     </head>
      <body>
        <div  class="container">
          <table id="table" class="stripe">
