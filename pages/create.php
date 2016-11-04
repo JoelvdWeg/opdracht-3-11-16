@@ -1,13 +1,10 @@
 <?php
 session_start();
 include('../classes/db_class.php');
+
+if(empty($_SESSION['result'])){$_SESSION['result'] = '';}
+
 if(isset($_POST['submit'])){
-
-
-
-
-}
-if(isset($_POST['submitcreate'])){
   $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
   $_SESSION['result'] = '';
   $regexname = "/^[a-zA-Z ]{1,30}$/";
@@ -19,8 +16,7 @@ if(isset($_POST['submitcreate'])){
   $regexport = "/^[0-9]{1,5}$/";
   $count = 0;
   $gebruikt = 0;
-  $gegevens = $db->dbselect();
-  $username = $_POST['usernamecreate'];
+
 
   if(preg_match($regexname, $_POST['Name']) == False){
     $count++;
@@ -50,12 +46,12 @@ if(isset($_POST['submitcreate'])){
     $count++;
     $_SESSION['result'] .= '<div style=" color: red">Error in Port.</div>';
   }
-  foreach ($gegevens as $account) {
-    if($username == $account['username']){
-      $gebruikt++;
-        $_SESSION['result'] = '<div style=" color: red">de username is al gebruikt</div>';
-    }
-  }
+  // foreach ($gegevens as $account) {
+  //   if($username == $account['username']){
+  //     $gebruikt++;
+  //       $_SESSION['result'] = '<div style=" color: red">de username is al gebruikt</div>';
+  //   }
+  // }
   if($count == 0 AND $gebruikt == 0){
     $passwordcreate = $_POST['Password'];
     $passwordcreate = crypt($passwordcreate, $salt);
@@ -119,6 +115,7 @@ if(isset($_POST['submitcreate'])){
               <input type="name" class="form-control" name="Port" id="exampleInputPort1" placeholder="Port">
             </div>
             <button type="submit" name="submit" class="btn btn-default">Submit</button>
+            <?php echo $_SESSION['result'];?>
           </form>
       </div>
     </div>
