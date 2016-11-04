@@ -3,10 +3,14 @@ body {
     padding-bottom: 20px;
 }
 
-/*a{
+a{
   text-decoration: none;
   color: black;
-}*/
+}
+a:hover{
+  text-decoration: none;
+  color: black;
+}
 input{
   border: 1px solid #ccc!important;
   border-radius: 0px!important;
