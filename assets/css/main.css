@@ -111,6 +111,14 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
     border: 1px solid #888888!important;
 }
 
+div.dataTables_wrapper div.dataTables_filter input {
+    border: 1px solid #888888!important;
+}
+div.dataTables_wrapper div.dataTables_length select {
+    border-radius: 0px;
+    border: 1px solid #888888;
+}
+
 .Form{
   background: #eee;
   border: 1px solid #888888;

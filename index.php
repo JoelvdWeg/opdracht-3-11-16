@@ -69,8 +69,10 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
 
         <!-- Latest compiled JavaScript -->
         <script src="assets/js/vendor/bootstrap.min.js"></script>
-  
+
+
      </head>
+
      <body>
        <div  class="container">
          <table id="table" class="stripe">
