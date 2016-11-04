@@ -20,31 +20,24 @@ if(isset($_POST['submit'])){
 
   if(preg_match($regexname, $_POST['Name']) == False){
     $count++;
-    $_SESSION['result'] = '<div style=" color: red">Error in Name.</div>';
   }
   if (preg_match($regexcompany, $_POST['Company']) == False){
     $count++;
-    $_SESSION['result'] .= '<div style=" color: red">Error in Company Name.</div>';
   }
   if (preg_match($regexdomain, $_POST['Domain']) == False){
     $count++;
-    $_SESSION['result'] .= '<div style=" color: red">Error in Domain.</div>';
   }
   if (preg_match($regexusername, $_POST['Username']) == False){
     $count++;
-    $_SESSION['result'] .= '<div style=" color: red">Error in Username.</div>';
   }
   if (preg_match($regexpassword, $_POST['Password']) == False){
     $count++;
-    $_SESSION['result'] .= '<div style=" color: red">Error in Password.</div>';
   }
   if (preg_match($regexserver, $_POST['Server']) == False){
     $count++;
-    $_SESSION['result'] .= '<div style=" color: red">Error in Server/Host.</div>';
   }
   if (preg_match($regexport, $_POST['Port']) == False){
     $count++;
-    $_SESSION['result'] .= '<div style=" color: red">Error in Port.</div>';
   }
   // foreach ($gegevens as $account) {
   //   if($username == $account['username']){
@@ -88,34 +81,82 @@ if(isset($_POST['submit'])){
           <form method="post">
             <div class="form-group">
               <label for="exampleInputName1">Name</label>
+              <?php
+              if(isset($_POST['submit'])){
+                if(preg_match($regexname, $_POST['Name']) == False){
+                  echo '<a style="color:Red">*</a>';
+                }
+              }?>
               <input type="name" class="form-control" name="Name" id="exampleInputName1" placeholder="Name">
             </div>
             <div class="form-group">
               <label for="exampleInputCompany1">Company</label>
+              <?php
+              if(isset($_POST['submit'])){
+                if(preg_match($regexcompany, $_POST['Company']) == False){
+                  echo '<a style="color:Red">*</a>';
+                }
+              }?>
               <input type="name" class="form-control" name="Company" id="exampleInputCompany1" placeholder="Company">
             </div>
             <div class="form-group">
               <label for="exampleInputDomain1">Domain Name</label>
+              <?php
+              if(isset($_POST['submit'])){
+                if(preg_match($regexdomain, $_POST['Domain']) == False){
+                  echo '<a style="color:Red">*</a>';
+                }
+              }?>
               <input type="name" class="form-control" name="Domain" id="exampleInputDomain1" placeholder="Domain Name">
             </div>
             <div class="form-group">
               <label for="exampleInputUser1">User Name</label>
+              <?php
+              if(isset($_POST['submit'])){
+                if(preg_match($regexusername, $_POST['Username']) == False){
+                  echo '<a style="color:Red">*</a>';
+                }
+              }?>
               <input type="name" class="form-control" name="Username" id="exampleInputUser1" placeholder="User Name">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
+              <?php
+              if(isset($_POST['submit'])){
+                if(preg_match($regexpassword, $_POST['Password']) == False){
+                  echo '<a style="color:Red">*</a>';
+                }
+              }?>
               <input type="password" class="form-control" name="Password" id="exampleInputPassword1" placeholder="Password">
             </div>
             <div class="form-group">
               <label for="exampleInputServer1">Server/Host</label>
+              <?php
+              if(isset($_POST['submit'])){
+                if(preg_match($regexserver, $_POST['Server']) == False){
+                  echo '<a style="color:Red">*</a>';
+                }
+              }?>
               <input type="name" class="form-control" name="Server" id="exampleInputServer1" placeholder="Server/Host">
             </div>
             <div class="form-group">
               <label for="exampleInputPort1">Port</label>
+              <?php
+              if(isset($_POST['submit'])){
+                if(preg_match($regexport, $_POST['Port']) == False){
+                  echo '<a style="color:Red">*</a>';
+                }
+              }?>
               <input type="name" class="form-control" name="Port" id="exampleInputPort1" placeholder="Port">
             </div>
+            <?php
+            if(isset($_POST['submit'])){
+              if($count != 0){
+                echo '<a style="color:Red">All fields with * are false<a>';
+              }
+            }?>
             <button type="submit" name="submit" class="btn btn-default">Submit</button>
-            <?php echo $_SESSION['result'];?>
+
           </form>
       </div>
     </div>
