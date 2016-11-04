@@ -160,6 +160,7 @@ if(isset($_POST['submit'])){
               }
             }?>
             <button type="submit" name="submit" class="btn btn-default">Submit</button>
+            <a style="margin-top:10px;" href="../index.php" class="btn btn-default">homepage</a>
 
           </form>
       </div>

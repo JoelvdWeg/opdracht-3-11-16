@@ -138,7 +138,7 @@ if(isset($_POST['Send'])){
           <input type="text" class="form-control" id="exampleInputText1" name="Subject" placeholder="Subject" value="ftp info">
         </div>
         <button type="Submit" Name="Send" class="btn btn-default">Send</button>
-
+        <a style="margin-top:10px;" href="../index.php" class="btn btn-default">homepage</a>
         <br>
       </form>
 
