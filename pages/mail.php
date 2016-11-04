@@ -1,8 +1,100 @@
 <?php
+session_start();
 include('../classes/db_class.php');
 
 $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
 $gegevens = $db->dbselect(' * ', 'users');
+if(isset($_GET['Id'])){$_SESSION['Id'] = $_GET['Id'];}
+if(isset($_POST['Send'])){
+  require '../PHPMailer/PHPMailerAutoload.php';
+
+  if(isset($_POST)) {
+      $message = serialize($_POST);
+  }
+  else {
+      $message = 'no post';
+  }
+
+  require_once('../tcpdf.php');
+  $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+  $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+  $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+
+  if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
+      require_once(dirname(__FILE__).'/lang/eng.php');
+      $pdf->setLanguageArray($l);
+  }
+  $pdf->SetFont('helvetica', '', 9);
+  $pdf->AddPage();
+  $html = '<html>
+  <head></head>
+  <body>
+
+  ';
+  foreach ($gegevens as $account) {
+    if($_SESSION['Id'] == $account['Id'])
+  $html.= '
+  <ul>
+    <li>Name: ' .$account['Name']. '</li>
+      <li>Company Name: '.$account['Company Name']. '</li>
+      <li>Domain Name: '.$account['Domain Name']. '</li>
+       <li>User Name: '.$account['User Name']. '</li>
+       <li>Password: '.$account['Password']. '</li>
+       <li>Server: '.$account['Server']. '</li>
+       <li>Port: '.$account['Port']. '</li>
+       </ul>
+
+  </body>
+  </html>'
+  ;};
+  $pdf->writeHTML($html, true, 0, true, 0);
+  $pdf->lastPage();
+
+
+
+  $mail = new PHPMailer();
+  $mail->isSMTP();
+  $mail->Host = 'one.mailgp.com';
+  $mail->SMTPAuth = true;
+  $mail->Username = 'jvandijk.stage@onetoweb.nl';
+  $mail->Password = 'N$@CFJO';
+  $mail->Port = 25;
+  $mail->From = 'jvandijk.stage@onetoweb.nl';
+  $mail->FromName = 'Joey';
+
+  $mail->addAddress($_POST['Email'], 'Name');
+  $mail->isHTML(true);
+
+  $mail->AddAttachment();
+  $mail->Subject = $_POST['Subject'];
+  $mail->Body    = '<html>
+  <head></head>
+  <body>
+
+  ';
+  foreach ($gegevens as $account) {
+    if($_SESSION['Id'] == $account['Id'])
+  $mail->Body.= '
+  <ul>
+    <li>Name: ' .$account['Name']. '</li>
+      <li>Company Name: '.$account['Company Name']. '</li>
+      <li>Domain Name: '.$account['Domain Name']. '</li>
+       <li>User Name: '.$account['User Name']. '</li>
+       <li>Password: '.$account['Password']. '</li>
+       <li>Server: '.$account['Server']. '</li>
+       <li>Port: '.$account['Port']. '</li>
+       </ul>
+
+  </body>
+  </html>';}
+
+  if(!$mail->send()) {
+      echo 'er kon geen bericht verzonden worden.';
+      echo 'Mailer Error: ' . $mail->ErrorInfo;
+  } else {
+        header('Location: ../index.php');
+  }
+}
  ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
