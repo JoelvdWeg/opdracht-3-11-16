@@ -141,7 +141,8 @@ div.dataTables_wrapper div.dataTables_length select {
 }
 .creat{
   position: relative;
-  bottom: 45px;
+  bottom: 60px;
+  width: 40px;
 
 }
 .create{
