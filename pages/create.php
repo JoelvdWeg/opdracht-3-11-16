@@ -1,11 +1,68 @@
 <?php
+session_start();
 include('../classes/db_class.php');
 if(isset($_POST['submit'])){
+
+
+
+
+}
+if(isset($_POST['submitcreate'])){
   $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
-  $db->dbinsert("`project 3 nov`.`users` (`Name`, `Company Name`, `Domain Name`, `User Name`, `Password`, `Server`, `Port`)", "'".$_POST["Name"]."',  '".$_POST["Company"]."',  '".$_POST["Domain"]."',  '".$_POST["Username"]."',  '".$_POST["Password"]."',  '".$_POST["Server"]."',  '".$_POST["Port"]."'");
+  $_SESSION['result'] = '';
+  $regexname = "/^[a-zA-Z ]{1,30}$/";
+  $regexcompany = "/^[a-zA-Z0-9 ]{1,40}$/";
+  $regexdomain= "/^[a-zA-Z0-9 ]{1,100}$/";
+  $regexusername = "/^[a-zA-Z-_]{1,30}$/";
+  $regexpassword = "/^[a-zA-Z0-9]{1,20}$/";
+  $regexserver = "/^[a-zA-Z0-9]{1,255}$/";
+  $regexport = "/^[0-9]{1,5}$/";
+  $count = 0;
+  $gebruikt = 0;
+  $gegevens = $db->dbselect();
+  $username = $_POST['usernamecreate'];
 
-
-  header('Location: ../index.php');
+  if(preg_match($regexname, $_POST['Name']) == False){
+    $count++;
+    $_SESSION['result'] = '<div style=" color: red">Error in Name.</div>';
+  }
+  if (preg_match($regexcompany, $_POST['Company']) == False){
+    $count++;
+    $_SESSION['result'] .= '<div style=" color: red">Error in Company Name.</div>';
+  }
+  if (preg_match($regexdomain, $_POST['Domain']) == False){
+    $count++;
+    $_SESSION['result'] .= '<div style=" color: red">Error in Domain.</div>';
+  }
+  if (preg_match($regexusername, $_POST['Username']) == False){
+    $count++;
+    $_SESSION['result'] .= '<div style=" color: red">Error in Username.</div>';
+  }
+  if (preg_match($regexpassword, $_POST['Password']) == False){
+    $count++;
+    $_SESSION['result'] .= '<div style=" color: red">Error in Password.</div>';
+  }
+  if (preg_match($regexserver, $_POST['Server']) == False){
+    $count++;
+    $_SESSION['result'] .= '<div style=" color: red">Error in Server/Host.</div>';
+  }
+  if (preg_match($regexport, $_POST['Port']) == False){
+    $count++;
+    $_SESSION['result'] .= '<div style=" color: red">Error in Port.</div>';
+  }
+  foreach ($gegevens as $account) {
+    if($username == $account['username']){
+      $gebruikt++;
+        $_SESSION['result'] = '<div style=" color: red">de username is al gebruikt</div>';
+    }
+  }
+  if($count == 0 AND $gebruikt == 0){
+    $passwordcreate = $_POST['Password'];
+    $passwordcreate = crypt($passwordcreate, $salt);
+    $insert = $db->dbinsert("`project 3 nov`.`users` (`Name`, `Company Name`, `Domain Name`, `User Name`, `Password`, `Server`, `Port`)", "'".$_POST["Name"]."',  '".$_POST["Company"]."',  '".$_POST["Domain"]."',  '".$_POST["Username"]."',  '".$passwordcreate."',  '".$_POST["Server"]."',  '".$_POST["Port"]."'");
+    $_SESSION['result'] = $insert;
+    header('Location: ../index.php');
+  }
 }
 
 ?>
