@@ -171,6 +171,12 @@ div.dataTables_wrapper div.dataTables_length select {
   text-decoration: none!important;
   color: black!important;
 }
+
+div.wrapper{
+  background: #eee;
+  border: 1px solid #888888;
+  padding: 10px;
+}
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
