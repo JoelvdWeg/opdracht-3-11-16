@@ -47,7 +47,7 @@
             $sth->bindParam(':Company', $_POST['Company']);
             $sth->bindParam(':Domain', $_POST['Domain']);
             $sth->bindParam(':Username', $_POST['Username']);
-            $sth->bindParam(':Password', $Password);
+            $sth->bindParam(':Password', $password);
             $sth->bindParam(':Server', $_POST['Server']);
             $sth->bindParam(':Port', $_POST['Port']);
             $sth->bindParam(':Id', $_GET['Id']);
