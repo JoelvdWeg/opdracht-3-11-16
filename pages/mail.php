@@ -46,28 +46,6 @@ $gegevens = $db->dbselect(' * ', 'users');
           <label for="exampleInputText1">Subject</label>
           <input type="text" class="form-control" id="exampleInputText1" name="Subject" placeholder="Subject" value="ftp info">
         </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Message</label>
-          <textarea class="form-control" name="Message">
-          <?php
-
-          foreach ($gegevens as $account) {
-            echo "
-          <ul>
-            <li>Name: ' .$account['Name']. '</li>
-              <li>Company Name: '.$account['Company Name']. '</li>
-              <li>Domain Name: '.$account['Domain Name']. '</li>
-               <li>User Name: '.$account['User Name']. '</li>
-               <li>Password: '.$account['Password']. '</li>
-               <li>Server: '.$account['Server']. '</li>
-               <li>Port: '.$account['Port']. '</li>
-            </ul>
-            "
-            ;};
-
-          ?>
-          </textarea>
-        </div>
         <button type="Submit" Name="Send" class="btn btn-default">Send</button>
 
         <br>
