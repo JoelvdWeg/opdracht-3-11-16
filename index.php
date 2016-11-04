@@ -22,7 +22,8 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
     <body>
 
     ';
-    foreach ($gegevens as $account) {$html.= '
+    foreach ($gegevens as $account) {
+    $html.= '
     <ul>
       <li>' .$account['Name']. '</li>
         <li>'.$account['Company Name']. '</li>
@@ -32,10 +33,10 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
          <li>'.$account['Server']. '</li>
          <li>'.$account['Port']. '</li>
          </ul>
-         ';};
-    $html.='
+
     </body>
-    </html>';
+    </html>'
+    ;};
     $pdf->writeHTML($html, true, 0, true, 0);
     $pdf->lastPage();
     $pdf->Output('htmlout.pdf', 'I');
