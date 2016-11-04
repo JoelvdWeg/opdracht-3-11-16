@@ -4,8 +4,8 @@
   $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
   $gegevens = $db->dbselect(' * ', 'users');
 
-
-  if(isset($_POST["pdf"])){
+if(empty($_GET['pdf'])){$_GET['pdf']='';}
+  if($_GET["pdf"]=="true"){
     require_once('tcpdf.php');
     $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
     $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
@@ -196,7 +196,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" name="pdf" class="btn btn-default">Download PDF</button>
+        <a href="?pdf=true" class="btn btn-default">Download PDF</a>
       </div>
     </div>
   </div>
