@@ -83,12 +83,13 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
     border-top-right-radius: 0px!important;
     border-bottom-right-radius: 0px!important;
     border-color: #888!important;
+    color: black!important;
 }
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
     z-index: 3;
     color: black!important;
     cursor: default;
-    background-color: #eee!important;
+    background-color: #ccc!important;
     border-color: #888!important;
 }
 .pagination>li:first-child>a, .pagination>li:first-child>span {
@@ -96,6 +97,18 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
     border-top-left-radius: 0px!important;
     border-bottom-left-radius: 0px!important;
     border-color: #888!important;
+    color: black!important;
+}
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: black!important;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #888888!important;
 }
 
 .Form{
