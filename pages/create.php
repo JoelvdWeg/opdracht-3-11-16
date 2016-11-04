@@ -1,6 +1,5 @@
 <?php
 session_start();
-include('../classes/db_class.php');
 
 if(empty($_SESSION['result'])){$_SESSION['result'] = '';}
 
@@ -54,7 +53,7 @@ if(isset($_POST['submit'])){
     $sth->bindParam(':Server', $_POST['Server']);
     $sth->bindParam(':Port', $_POST['Port']);
     $sth->execute();
-    
+
     header('Location: ../index.php');
   }
 }
