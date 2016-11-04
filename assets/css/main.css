@@ -119,6 +119,12 @@ div.dataTables_wrapper div.dataTables_length select {
     border: 1px solid #888888;
 }
 
+#table_filter, #table_paginate{
+  float: right;
+}
+
+
+
 .Form{
   background: #eee;
   border: 1px solid #888888;
@@ -131,7 +137,8 @@ div.dataTables_wrapper div.dataTables_length select {
 }
 .creat{
   position: relative;
-  bottom: 38px;
+  bottom: 45px;
+
 }
 .create{
   padding: 6px 8px;
@@ -139,6 +146,7 @@ div.dataTables_wrapper div.dataTables_length select {
   border: 1px solid #888888;
   text-decoration: none;
   color: black;
+
 }
 
 .create:hover{
