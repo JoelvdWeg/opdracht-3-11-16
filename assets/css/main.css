@@ -74,6 +74,10 @@ td{
 .btn-default:hover{
   background: #eee!important;
 }
+.pdf{
+  text-decoration: none!important;
+  color: black!important;
+}
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
