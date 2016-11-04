@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
   $sth = $dbh->prepare('INSERT INTO `project 3 nov`.`users` (`Name`, `Company Name`, `Domain Name`, `User Name`, `Password`, `Server`, `Port`)
     VALUES (:Name , :Company, :Domain, :Username, :Password, :Server, :Port)');
 
-  //$db = new db('localhost', 'root', 'usbw', 'project 3 nov');
+
   $_SESSION['result'] = '';
   $regexname = "/^[a-zA-Z ]{1,30}$/";
   $regexcompany = "/^[a-zA-Z0-9 ]{1,40}$/";
@@ -20,7 +20,6 @@ if(isset($_POST['submit'])){
   $regexport = "/^[0-9]{1,5}$/";
   $count = 0;
   $gebruikt = 0;
-
 
   if(preg_match($regexname, $_POST['Name']) == False){
     $count++;
@@ -43,12 +42,7 @@ if(isset($_POST['submit'])){
   if (preg_match($regexport, $_POST['Port']) == False){
     $count++;
   }
-  // foreach ($gegevens as $account) {
-  //   if($username == $account['username']){
-  //     $gebruikt++;
-  //       $_SESSION['result'] = '<div style=" color: red">de username is al gebruikt</div>';
-  //   }
-  // }
+
   if($count == 0 AND $gebruikt == 0){
     $passwordcreate = $_POST['Password'];
     $passwordcreate = crypt($passwordcreate, $salt);
@@ -60,8 +54,7 @@ if(isset($_POST['submit'])){
     $sth->bindParam(':Server', $_POST['Server']);
     $sth->bindParam(':Port', $_POST['Port']);
     $sth->execute();
-    //$insert = $db->dbinsert("`project 3 nov`.`users` (`Name`, `Company Name`, `Domain Name`, `User Name`, `Password`, `Server`, `Port`)", "'".$_POST["Name"]."',  '".$_POST["Company"]."',  '".$_POST["Domain"]."',  '".$_POST["Username"]."',  '".$passwordcreate."',  '".$_POST["Server"]."',  '".$_POST["Port"]."'");
-    //$_SESSION['result'] = $insert;
+    
     header('Location: ../index.php');
   }
 }
