@@ -134,7 +134,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
         <input type="name" class="form-control" name="Username" id="exampleInputNUser1" value="' .$account['User Name']. '">
       </div>
       <div class="form-group">
-        <label for="exampleInputpass1">Password(new)</label>
+        <label for="exampleInputpass1">Password(Crypt)</label>
         <input type="name" class="form-control" name="Password" id="exampleInputPass1" value="' .$account['Password']. '">
       </div>
       <div class="form-group">
