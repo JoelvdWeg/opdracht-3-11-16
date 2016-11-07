@@ -39,7 +39,7 @@ if(isset($_POST['Send'])){
       <li>Company Name: '.$account['Company Name']. '</li>
       <li>Domain Name: '.$account['Domain Name']. '</li>
        <li>User Name: '.$account['User Name']. '</li>
-       <li>Password: '.$account['Password']. '</li>
+       <li>Password(Crypt): '.$account['Password']. '</li>
        <li>Server: '.$account['Server']. '</li>
        <li>Port: '.$account['Port']. '</li>
        </ul>

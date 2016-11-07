@@ -31,7 +31,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
         <li>Company Name: '.$account['Company Name']. '</li>
         <li>Domain Name: '.$account['Domain Name']. '</li>
          <li>User Name: '.$account['User Name']. '</li>
-         <li>Password: '.$account['Password']. '</li>
+         <li>Password(Crypt): '.$account['Password']. '</li>
          <li>Server: '.$account['Server']. '</li>
          <li>Port: '.$account['Port']. '</li>
          </ul>
@@ -82,7 +82,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
              <th>Company Name</th>
              <th>Domain Name</th>
              <th>Username</th>
-             <th>Password</th>
+             <th>Password(Crypt)</th>
              <th>Server/Host</th>
              <th>Port</th>
              <th  class="right">Actions</th>
