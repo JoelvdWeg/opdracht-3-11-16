@@ -49,7 +49,7 @@ if(isset($_POST['Send'])){
   ;};
   $pdf->writeHTML($html, true, 0, true, 0);
   $pdf->lastPage();
-  $pdf->Output('pdf.pdf', 'E');
+  $pdf->Output(getcwd().'/pdf.pdf', 'F');
 
   $mail = new PHPMailer();
   $mail->isSMTP();
@@ -64,7 +64,7 @@ if(isset($_POST['Send'])){
   $mail->addAddress($_POST['Email'], 'Name');
   $mail->isHTML(true);
 
-  $mail->AddAttachment('../pdf.pdf');
+  $mail->AddAttachment(getcwd().'/pdf.pdf');
   $mail->Subject = $_POST['Subject'];
   $mail->Body    = '<html>
   <head></head>
@@ -79,7 +79,7 @@ if(isset($_POST['Send'])){
       <li>Company Name: '.$account['Company Name']. '</li>
       <li>Domain Name: '.$account['Domain Name']. '</li>
        <li>User Name: '.$account['User Name']. '</li>
-       <li>Password: '.$account['Password']. '</li>
+       <li>Password(Crypt): '.$account['Password']. '</li>
        <li>Server: '.$account['Server']. '</li>
        <li>Port: '.$account['Port']. '</li>
        </ul>
