@@ -6,7 +6,7 @@
       $sth = $dbh->prepare('UPDATE `users`
         SET `Name`=:Name, `Company Name`=:Company, `Domain Name`=:Domain, `User Name`=:Username, `Password`=:Password, `Server`=:Server, `Port`=:Port
         WHERE `Id`=:Id');
-
+          
           $_SESSION['result'] = '';
           $regexname = "/^[a-zA-Z ]{1,30}$/";
           $regexcompany = "/^[a-zA-Z0-9 ]{1,40}$/";

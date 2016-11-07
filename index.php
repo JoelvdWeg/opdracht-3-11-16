@@ -95,10 +95,10 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
           echo '<td>'.$account['Company Name']. '</td>';
           echo '<td>'.$account['Domain Name']. '</td>';
           echo '<td>'.$account['User Name']. '</td>';
-          echo '<td>'.$account['Password']. '</td>';
+          echo '<td style="width: 400px;">'.$account['Password']. '</td>';
           echo '<td>'.$account['Server']. '</td>';
           echo '<td>'.$account['Port']. '</td>';
-          echo '<td class="right"> <a data-toggle="tooltip" data-placement="top" title="Delete" href="#"><i data-toggle="modal" data-target="#del'.$account['Id'].'" class="fa fa-trash-o fa-lg " aria-hidden="true"></i></a> <a data-toggle="tooltip" data-placement="top" title="Edit" href="#"><i data-toggle="modal" data-target="#upd'.$account['Id'].'" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a> <a data-toggle="tooltip" data-placement="top" title="Download PDF" class="pdf" href="?pdf=true&Id='.$account['Id'].'" ><i data-toggle="modal" data-target="" class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></a> <a data-toggle="tooltip" data-placement="top" title="Send Mail" href="pages/mail.php?Id='.$account['Id'].'"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a> </td></tr>';
+          echo '<td class="right"> <a data-toggle="tooltip" data-placement="top" title="Delete" href="#"><i data-toggle="modal" data-target="#del'.$account['Id'].'" class="fa fa-trash-o fa-lg " aria-hidden="true"></i></a> <a data-toggle="tooltip" data-placement="top" title="Edit" href="#"><i data-toggle="modal" data-target="#upd'.$account['Id'].'" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a> <a data-toggle="tooltip" data-placement="top" title="PDF" class="pdf" href="?pdf=true&Id='.$account['Id'].'" ><i data-toggle="modal" data-target="" class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></a> <a data-toggle="tooltip" data-placement="top" title="Send Mail" href="pages/mail.php?Id='.$account['Id'].'"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a> </td></tr>';
          }
          ?>
          </tbody>

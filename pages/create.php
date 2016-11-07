@@ -131,7 +131,7 @@ if(isset($_POST['submit'])){
                   echo '<a style="color:Red">*</a>';
                 }
               }?>
-              <input type="password" class="form-control" name="Password" id="exampleInputPassword1" placeholder="Password">
+              <input type="name" class="form-control" name="Password" id="exampleInputPassword1" placeholder="Password">
             </div>
             <div class="form-group">
               <label for="exampleInputServer1">Server/Host</label>
