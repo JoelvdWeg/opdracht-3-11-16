@@ -2,7 +2,9 @@
   include('classes/db_class.php');
 
   $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
-  $gegevens = $db->dbselect(' * ', 'users');
+    $dbh = new PDO("mysql:host=localhost:3307;dbname=project 3 nov;","root","usbw");
+    $sql = 'SELECT * FROM `users`';
+  $gegevens = $dbh->query($sql);
 
 if(empty($_GET['pdf'])){$_GET['pdf']='';}
 
