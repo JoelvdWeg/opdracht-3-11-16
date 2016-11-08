@@ -145,6 +145,14 @@ div.dataTables_wrapper div.dataTables_length select {
   width: 40px;
 
 }
+
+.logout{
+  position: relative;
+  bottom: 85px;
+  width: 30px;
+  height: 31px;
+  left: 40px;
+}
 .create{
   padding: 6px 8px;
   background: #eee;
@@ -153,10 +161,18 @@ div.dataTables_wrapper div.dataTables_length select {
   color: black;
 
 }
+button.create{
+  padding: 4px 8px!important;
+  background: #eee!important;
+  border: 1px solid #888888!important;
+  text-decoration: none!important;
+  color: black!important;
 
-.create:hover{
-  background: white;
-  color: black;
+}
+
+.create:hover, button.create:hover{
+  background: white!important;
+  color: black!important;
 }
 
 .btn-default {

@@ -5,7 +5,10 @@ if(empty($_SESSION['login'])){ header('Location: pages/login.php');}
     $dbh = new PDO("mysql:host=localhost:3307;dbname=project 3 nov;","root","usbw");
     $sql = 'SELECT * FROM `users`';
   $gegevens = $dbh->query($sql);
-
+if(isset($_POST['logout'])){
+  $_SESSION['login'] = "";
+  header("Location: pages/login.php");
+}
 if(empty($_GET['pdf'])){$_GET['pdf']='';}
 
   if($_GET["pdf"]=="true"){
@@ -199,6 +202,12 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
 
 <div  class="creat">
 <a class="create" href="pages/create.php"><i class="fa fa-plus" aria-hidden="true"></i></a>
+</div>
+
+<div  class="logout">
+  <form method="post">
+<button name="logout" type="submit" class="create"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+</form>
 </div>
 
 <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
