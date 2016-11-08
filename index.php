@@ -1,7 +1,7 @@
 <?php
+session_start();
+if(empty($_SESSION['login'])){ header('Location: pages/login.php');}
   include('classes/db_class.php');
-
-  $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
     $dbh = new PDO("mysql:host=localhost:3307;dbname=project 3 nov;","root","usbw");
     $sql = 'SELECT * FROM `users`';
   $gegevens = $dbh->query($sql);
@@ -26,7 +26,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
 
     ';
     foreach ($gegevens as $account) {
-      if($_GET['Id'] == $account['Id'])
+      if($_GET['Id'] == $account['Id']){
     $html.= '
     <ul>
       <li>Name: ' .$account['Name']. '</li>
@@ -39,8 +39,8 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
          </ul>
 
     </body>
-    </html>'
-    ;};
+    </html>';}
+    }
     $pdf->writeHTML($html, true, 0, true, 0);
     $pdf->lastPage();
     $pdf->Output('htmlout.pdf', 'I');
@@ -79,6 +79,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
        <div  class="container">
          <table id="table" class="stripe">
            <thead>
+<<<<<<< HEAD
              <tr>
                <th>Name</th>
                <th>Company Name</th>
@@ -115,6 +116,38 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
             </a> </td></tr>';
 
         echo '
+=======
+           <tr>
+             <th>Name</th>
+             <th>Company Name</th>
+             <th>Domain Name</th>
+             <th>Username</th>
+             <th>Password(Crypt)</th>
+             <th>Server/Host</th>
+             <th>Port</th>
+             <th  class="right">Actions</th>
+           </tr>
+         </thead>
+         <tbody>
+         <?php
+         foreach ($gegevens as $account) {
+          echo '<tr><td>' .$account['Name']. '</td>' ;
+          echo '<td>'.$account['Company Name']. '</td>';
+          echo '<td>'.$account['Domain Name']. '</td>';
+          echo '<td>'.$account['User Name']. '</td>';
+          echo '<td style="width: 400px;">'.$account['Password']. '</td>';
+          echo '<td>'.$account['Server']. '</td>';
+          echo '<td>'.$account['Port']. '</td>';
+          echo '<td class="right"> <a data-toggle="tooltip" data-placement="top" title="Delete" href="#"><i data-toggle="modal" data-target="#del'.$account['Id'].'" class="fa fa-trash-o fa-lg " aria-hidden="true"></i></a> <a data-toggle="tooltip" data-placement="top" title="Edit" href="#"><i data-toggle="modal" data-target="#upd'.$account['Id'].'" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a> <a data-toggle="tooltip" data-placement="top" title="PDF" class="pdf" href="?pdf=true&Id='.$account['Id'].'" ><i data-toggle="modal" data-target="" class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></a> <a data-toggle="tooltip" data-placement="top" title="Send Mail" href="pages/mail.php?Id='.$account['Id'].'"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a> </td></tr>';
+         }
+         ?>
+         </tbody>
+       </table>
+
+       <?php
+         foreach ( $gegevens as $account) {
+           echo '
+>>>>>>> b003fde0c998c2d3fd4f3b430a9426c2d6e9a1b4
 <!-- Modal -->
 <!-- update -->
 <div class="modal fade" id="upd'.$account['Id'].'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -192,13 +225,17 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
 </div>
 ';}
 ?>
+<<<<<<< HEAD
 
 </tbody>
 </table>
 
+=======
+>>>>>>> b003fde0c998c2d3fd4f3b430a9426c2d6e9a1b4
 <div  class="creat">
 <a class="create" href="pages/create.php"><i class="fa fa-plus" aria-hidden="true"></i></a>
 </div>
+
 <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs-3.3.6/jq-2.2.3/dt-1.10.12/b-1.2.2/r-2.1.0/sc-1.4.2/se-1.2.0/datatables.min.js"></script>
 

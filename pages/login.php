@@ -3,7 +3,7 @@ session_start();
 $dbh = new PDO("mysql:host=localhost:3307;dbname=project 3 nov;","root","usbw");
 $sql = 'SELECT * FROM `users`';
 $gegevens = $dbh->query($sql);
-
+$result = '';
 if(isset($_POST['submit'])){
   $salt = '$1$3neee';
   $password = $_POST['Password'];
@@ -12,6 +12,9 @@ if(isset($_POST['submit'])){
       if($_POST['Username'] == $acc['User Name'] AND $password == $acc['Password']){
         $_SESSION['login'] = True;
         header('Location: ../index.php');
+    }
+    else{
+      $result = '<div style="color: red;">Wrong Username or Password.</div>';
     }
    }
 }
@@ -59,6 +62,7 @@ if(isset($_POST['submit'])){
       </div>
       <button type="submit" name="submit" class="btn btn-default">Submit</button>
     </form>
+    <?php echo $result; ?>
   </div>
 </div>
       <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
