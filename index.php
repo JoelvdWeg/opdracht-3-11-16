@@ -113,13 +113,8 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
             <a data-toggle="tooltip" data-placement="top" title="Send Mail" href="pages/mail.php?Id='.$account['Id'].'">
               <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>
             </a> </td></tr>';
-           }
-           ?>
-           </tbody>
-         </table>
-
-       <?php
-         foreach ($gegevens as $account) {echo '
+           
+        echo '
 <!-- Modal -->
 <!-- update -->
 <div class="modal fade" id="upd'.$account['Id'].'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -197,6 +192,9 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
 </div>
 ';}
 ?>
+</tbody>
+</table>
+
 <div  class="creat">
 <a class="create" href="pages/create.php"><i class="fa fa-plus" aria-hidden="true"></i></a>
 </div>
