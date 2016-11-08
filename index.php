@@ -1,7 +1,7 @@
 <?php
+session_start();
+if(empty($_SESSION['login'])){ header('Location: pages/login.php');}
   include('classes/db_class.php');
-
-  $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
     $dbh = new PDO("mysql:host=localhost:3307;dbname=project 3 nov;","root","usbw");
     $sql = 'SELECT * FROM `users`';
   $gegevens = $dbh->query($sql);

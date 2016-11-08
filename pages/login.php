@@ -1,3 +1,22 @@
+<?php
+session_start();
+$dbh = new PDO("mysql:host=localhost:3307;dbname=project 3 nov;","root","usbw");
+$sql = 'SELECT * FROM `users`';
+$gegevens = $dbh->query($sql);
+
+if(isset($_POST['submit'])){
+  $salt = '$1$3neee';
+  $password = $_POST['Password'];
+  $password = crypt($password, $salt);
+    foreach ($gegevens as $acc) {
+      if($_POST['Username'] == $acc['User Name'] AND $password == $acc['Password']){
+        $_SESSION['login'] = True;
+        header('Location: ../index.php');
+    }
+   }
+}
+?>
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -29,16 +48,16 @@
     <body>
     <div  class="container">
       <div class="col-lg-4 col-lg-offset-4 Form">
-      <form>
+      <form method="post">
       <div class="form-group">
         <label for="exampleInputUser1">username</label>
-        <input type="email" class="form-control" name="Username" id="exampleInputUser1" placeholder="User">
+        <input type="name" class="form-control" name="Username" id="exampleInputUser1" placeholder="User">
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
         <input type="password" class="form-control" name="Password" id="exampleInputPassword1" placeholder="Password">
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="submit" name="submit" class="btn btn-default">Submit</button>
     </form>
   </div>
 </div>

@@ -45,9 +45,10 @@
                 if (preg_match($regexpassword, $_POST['Password']) == False){
                   $count++;
                 }
+                  $salt = '$1$3neee';
                 $password = crypt($password, $salt);
               }
-            
+
             }
           }
           if($count == 0 AND $gebruikt == 0){

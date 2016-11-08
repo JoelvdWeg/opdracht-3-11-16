@@ -43,6 +43,7 @@ if(isset($_POST['submit'])){
   }
 
   if($count == 0 AND $gebruikt == 0){
+      $salt = '$1$3neee';
     $passwordcreate = $_POST['Password'];
     $passwordcreate = crypt($passwordcreate, $salt);
     $sth->bindParam(':Name', $_POST['Name']);
