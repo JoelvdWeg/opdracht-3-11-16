@@ -1,7 +1,7 @@
 <?php
+session_start();
+if(empty($_SESSION['login'])){ header('Location: pages/login.php');}
   include('classes/db_class.php');
-
-  $db = new db('localhost', 'root', 'usbw', 'project 3 nov');
     $dbh = new PDO("mysql:host=localhost:3307;dbname=project 3 nov;","root","usbw");
     $sql = 'SELECT * FROM `users`';
   $gegevens = $dbh->query($sql);
@@ -79,44 +79,32 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
        <div  class="container">
          <table id="table" class="stripe">
            <thead>
-             <tr>
-               <th>Name</th>
-               <th>Company Name</th>
-               <th>Domain Name</th>
-               <th>Username</th>
-               <th>Password(Crypt)</th>
-               <th>Server/Host</th>
-               <th>Port</th>
-               <th  class="right">Actions</th>
-             </tr>
-           </thead>
-           <tbody>
-           <?php
-           foreach ($gegevens as $account) {
-            echo '<tr><td>' .$account['Name']. '</td>' ;
-            echo '<td>'.$account['Company Name']. '</td>';
-            echo '<td>'.$account['Domain Name']. '</td>';
-            echo '<td>'.$account['User Name']. '</td>';
-            echo '<td style="width: 400px;">'.$account['Password']. '</td>';
-            echo '<td>'.$account['Server']. '</td>';
-            echo '<td>'.$account['Port']. '</td>';
-            echo '<td class="right">
-            <a data-toggle="tooltip" data-placement="top" title="Delete">
-            <i data-toggle="modal" data-target="#del'.$account['Id'].'" class="fa fa-trash-o fa-lg " aria-hidden="true"></i>
-            </a>
-            <a data-toggle="tooltip" data-placement="top" title="Edit" href="#">
-              <i data-toggle="modal" data-target="#upd'.$account['Id'].'" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
-            </a>
-            <a data-toggle="tooltip" data-placement="top" title="PDF" class="pdf" href="?pdf=true&Id='.$account['Id'].'" >
-              <i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i>
-            </a>
-            <a data-toggle="tooltip" data-placement="top" title="Send Mail" href="pages/mail.php?Id='.$account['Id'].'">
-              <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>
-            </a> </td></tr>';
-           }
-           ?>
-           </tbody>
-         </table>
+           <tr>
+             <th>Name</th>
+             <th>Company Name</th>
+             <th>Domain Name</th>
+             <th>Username</th>
+             <th>Password(Crypt)</th>
+             <th>Server/Host</th>
+             <th>Port</th>
+             <th  class="right">Actions</th>
+           </tr>
+         </thead>
+         <tbody>
+         <?php
+         foreach ($gegevens as $account) {
+          echo '<tr><td>' .$account['Name']. '</td>' ;
+          echo '<td>'.$account['Company Name']. '</td>';
+          echo '<td>'.$account['Domain Name']. '</td>';
+          echo '<td>'.$account['User Name']. '</td>';
+          echo '<td style="width: 400px;">'.$account['Password']. '</td>';
+          echo '<td>'.$account['Server']. '</td>';
+          echo '<td>'.$account['Port']. '</td>';
+          echo '<td class="right"> <a data-toggle="tooltip" data-placement="top" title="Delete" href="#"><i data-toggle="modal" data-target="#del'.$account['Id'].'" class="fa fa-trash-o fa-lg " aria-hidden="true"></i></a> <a data-toggle="tooltip" data-placement="top" title="Edit" href="#"><i data-toggle="modal" data-target="#upd'.$account['Id'].'" class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a> <a data-toggle="tooltip" data-placement="top" title="PDF" class="pdf" href="?pdf=true&Id='.$account['Id'].'" ><i data-toggle="modal" data-target="" class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></a> <a data-toggle="tooltip" data-placement="top" title="Send Mail" href="pages/mail.php?Id='.$account['Id'].'"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a> </td></tr>';
+         }
+         ?>
+         </tbody>
+       </table>
 
        <?php
          foreach ($gegevens as $account) {echo '
