@@ -197,14 +197,14 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
 </tbody>
 </table>
 
-<div  class="creat">
-<a class="create" href="pages/create.php"><i class="fa fa-plus" aria-hidden="true"></i></a>
+<div  class="creat" data-toggle="tooltip" data-placement="top" title="Create">
+    <a class="create" href="pages/create.php"><i class="fa fa-plus" aria-hidden="true"></i></a>
 </div>
 
-<div  class="logout">
-  <form method="post">
-<button name="logout" type="submit" class="create"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
-</form>
+<div class="logout" data-toggle="tooltip" data-placement="top" title="Log-Out">
+    <form method="post">
+      <button name="logout" type="submit" class="create"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+    </form>
 </div>
 
 <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>

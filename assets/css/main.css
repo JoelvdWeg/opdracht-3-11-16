@@ -171,9 +171,10 @@ button.create{
 }
 
 .create:hover, button.create:hover{
-  background: white!important;
-  color: black!important;
+  background: grey!important;
+  color: white!important;
 }
+
 
 .btn-default {
   text-shadow: 0 1px 0 #fff;
