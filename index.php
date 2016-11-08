@@ -26,7 +26,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
 
     ';
     foreach ($gegevens as $account) {
-      if($_GET['Id'] == $account['Id'])
+      if($_GET['Id'] == $account['Id']){
     $html.= '
     <ul>
       <li>Name: ' .$account['Name']. '</li>
@@ -39,8 +39,8 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
          </ul>
 
     </body>
-    </html>'
-    ;};
+    </html>';}
+    }
     $pdf->writeHTML($html, true, 0, true, 0);
     $pdf->lastPage();
     $pdf->Output('htmlout.pdf', 'I');
@@ -107,7 +107,8 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
        </table>
 
        <?php
-         foreach ($gegevens as $account) {echo '
+         foreach ( $gegevens as $account) {
+           echo '
 <!-- Modal -->
 <!-- update -->
 <div class="modal fade" id="upd'.$account['Id'].'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -188,6 +189,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
 <div  class="creat">
 <a class="create" href="pages/create.php"><i class="fa fa-plus" aria-hidden="true"></i></a>
 </div>
+
 <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs-3.3.6/jq-2.2.3/dt-1.10.12/b-1.2.2/r-2.1.0/sc-1.4.2/se-1.2.0/datatables.min.js"></script>
 
