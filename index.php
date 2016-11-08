@@ -112,10 +112,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
             </a>
             <a data-toggle="tooltip" data-placement="top" title="Send Mail" href="pages/mail.php?Id='.$account['Id'].'">
               <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>
-            </a> </td></tr>';
-
-           echo '
-
+            </a> </td></tr>
 <!-- Modal -->
 <!-- update -->
 <div class="modal fade" id="upd'.$account['Id'].'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
