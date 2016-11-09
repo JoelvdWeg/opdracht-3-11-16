@@ -54,11 +54,17 @@ if(isset($_POST['submit'])){
       <form method="post">
       <div class="form-group">
         <label for="exampleInputUser1">username</label>
-        <input type="name" class="form-control" name="Username" id="exampleInputUser1" placeholder="User">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
+          <input type="name" class="form-control" name="Username" id="exampleInputUser1" placeholder="User" aria-describedby="basic-addon1">
+        </div>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" name="Password" id="exampleInputPassword1" placeholder="Password">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon2"><i class="fa fa-lock" aria-hidden="true"></i></span>
+          <input type="password" class="form-control" name="Password" id="exampleInputPassword1" placeholder="Password" aria-describedby="basic-addon2">
+        </div>
       </div>
       <button type="submit" name="submit" class="btn btn-default">Submit</button>
     </form>

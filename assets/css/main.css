@@ -1,6 +1,7 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background: #666;
 }
 
 a{
@@ -16,42 +17,48 @@ input{
   border-radius: 0px!important;
 }
 button{
-  border: 1px solid #ccc!important;
+
   border-radius: 0px!important;
   background: white!important;
   width: 100%!important;
 }
-
+table{
+  box-shadow: #5A5A5A 1px 1px,
+  #5A5A5A 2px 2px,
+  #5A5A5A 3px 3px,
+  #5A5A5A 4px 4px,
+  #5A5A5A 5px 5px,
+  #5A5A5A 6px 6px,
+  #5A5A5A 7px 7px,
+  #5A5A5A 8px 8px,
+  #5A5A5A 9px 9px,
+  #5A5A5A 10px 10px;
+}
 
 th{
   padding: 10px 0px!important;
   text-align: center;
   width: 150px;
   max-width: 150px;
-  border-top: 1px solid #888888;
-  border-left: 1px solid #888888;
-  border-bottom: 1px solid #888888;
-  background: #eee;
+
+  background: #E52B50;
+  color: white;
 }
 
 td{
   padding: 10px 0px!important;
-  text-align: center;
+  text-align: center!important;
   width: 150px;
   max-width: 150px;
   overflow: hidden;
-  border-bottom: 1px solid #888888;
-  border-left: 1px solid #888888;
+
 }
 
-.right{
-  border-right: 1px solid #888888;
-}
+
 tr.odd{
   padding: 10px 0px!important;
   text-align: center;
   width: 150px;
-  border: 1px solid #888888;
   background: white!important;
 }
 
@@ -59,18 +66,24 @@ tr.even{
   padding: 10px 0px!important;
   text-align: center;
   width: 150px;
-  border: 1px solid #888888;
-  background: #eee!important;
+  background: #fff!important;
+}
+
+.right{
+  background: #333333;
+  color: white;
 }
 
 thead{
   background: #ccc!important;
 }
-table.dataTable tr.odd td.sorting_1 {
+table.dataTable tr.odd td.sorting_1, table.dataTable tr.even td.sorting_1 {
     background-color: white!important;
 }
-table.dataTable tr.even td.sorting_1 {
-    background-color: #eee!important;
+
+
+.fa{
+  color: white;
 }
 
 .dataTables_info {
@@ -79,28 +92,28 @@ table.dataTable tr.even td.sorting_1 {
 table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.dataTable thead .sorting_asc_disabled, table.dataTable thead .sorting_desc_disabled {
     cursor: pointer;
     position: relative;
-    text-align: left;
+    text-align: center;
     padding-left: 5px!important;
 }
 
 .pagination>li:last-child>a, .pagination>li:last-child>span {
     border-top-right-radius: 0px!important;
     border-bottom-right-radius: 0px!important;
-    border-color: #888!important;
+    border-color: #333333!important;
     color: black!important;
 }
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
     z-index: 3;
-    color: black!important;
+    color: white!important;
     cursor: default;
-    background-color: #ccc!important;
-    border-color: #888!important;
+    background-color: #E52B50!important;
+    border-color: #333333!important;
 }
 .pagination>li:first-child>a, .pagination>li:first-child>span {
     margin-left: 0;
     border-top-left-radius: 0px!important;
     border-bottom-left-radius: 0px!important;
-    border-color: #888!important;
+    border-color: #333333!important;
     color: black!important;
 }
 .pagination>li>a, .pagination>li>span {
@@ -112,7 +125,7 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
     color: black!important;
     text-decoration: none;
     background-color: #fff;
-    border: 1px solid #888888!important;
+    border: 1px solid #333333!important;
 }
 
 div.dataTables_wrapper div.dataTables_filter input {
@@ -130,9 +143,75 @@ div.dataTables_wrapper div.dataTables_length select {
 
 
 .Form{
-  background: #eee;
-  border: 1px solid #888888;
+  background: #333333;
   padding: 10px;
+  color: white;
+   box-shadow: #5A5A5A 1px 1px,
+   #5A5A5A 2px 2px,
+   #5A5A5A 3px 3px,
+   #5A5A5A 4px 4px,
+   #5A5A5A 5px 5px,
+   #5A5A5A 6px 6px,
+   #5A5A5A 7px 7px,
+   #5A5A5A 8px 8px,
+   #5A5A5A 9px 9px,
+   #5A5A5A 10px 10px,
+   #5A5A5A 11px 11px,
+   #5A5A5A 12px 12px,
+   #5A5A5A 13px 13px,
+   #5A5A5A 14px 14px,
+   #5A5A5A 15px 15px,
+   #5A5A5A 16px 16px,
+   #5A5A5A 17px 17px,
+   #5A5A5A 18px 18px,
+   #5A5A5A 19px 19px,
+   #5A5A5A 20px 20px,
+   #5A5A5A 21px 21px,
+   #5A5A5A 22px 22px,
+   #5A5A5A 23px 23px,
+   #5A5A5A 24px 24px,
+   #5A5A5A 25px 25px,
+   #5A5A5A 26px 26px,
+   #5A5A5A 27px 27px,
+   #5A5A5A 28px 28px,
+   #5A5A5A 29px 29px,
+   #5A5A5A 30px 30px,
+   #5A5A5A 31px 31px,
+   #5A5A5A 32px 32px,
+   #5A5A5A 33px 33px,
+   #5A5A5A 34px 34px,
+   #5A5A5A 35px 35px,
+   #5A5A5A 36px 36px,
+   #5A5A5A 37px 37px,
+   #5A5A5A 38px 38px,
+   #5A5A5A 39px 39px,
+   #5A5A5A 40px 40px,
+   #5A5A5A 41px 41px,
+   #5A5A5A 42px 42px,
+   #5A5A5A 43px 43px,
+   #5A5A5A 44px 44px,
+   #5A5A5A 45px 45px,
+   #5A5A5A 46px 46px,
+   #5A5A5A 47px 47px,
+   #5A5A5A 48px 48px,
+   #5A5A5A 49px 49px,
+   #5A5A5A 50px 50px,
+   #5A5A5A 51px 51px,
+   #5A5A5A 52px 52px,
+   #5A5A5A 53px 53px,
+   #5A5A5A 54px 54px,
+   #5A5A5A 55px 55px,
+   #5A5A5A 56px 56px,
+   #5A5A5A 57px 57px,
+   #5A5A5A 58px 58px,
+   #5A5A5A 59px 59px,
+   #5A5A5A 60px 60px;
+}
+
+.input-group-addon{
+  background: #E52B50;
+  color: white;
+  border: 0px solid transparent!important;
 }
 
 .modal-footer .btn+.btn {
@@ -155,7 +234,7 @@ div.dataTables_wrapper div.dataTables_length select {
 }
 .create{
   padding: 6px 8px!important;
-  background: #eee!important;
+  background: #333333!important;
   border: 1px solid #888888!important;
   text-decoration: none!important;
   color: black;
@@ -163,7 +242,7 @@ div.dataTables_wrapper div.dataTables_length select {
 }
 button.create{
   padding: 4px 8px!important;
-  background: #eee!important;
+  background: #333333!important;
   border: 1px solid #888888!important;
   text-decoration: none!important;
   color: black!important;
@@ -171,7 +250,7 @@ button.create{
 }
 
 .create:hover, button.create:hover{
-  background: grey!important;
+  background: #E52B50!important;
   color: white!important;
 }
 
@@ -180,9 +259,11 @@ button.create{
   text-shadow: 0 1px 0 #fff;
   background-image: none!important;
   filter: none!important;
+  background: #E52B50!important;
+  color: white!important;
   background-repeat: repeat-x;
-  border-color: #dbdbdb;
-  border-color: #ccc;
+
+  border-color: #333333;
   width: 100%;
 }
 
