@@ -107,6 +107,7 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
 }
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
     z-index: 999;
+    overflow: hidden;
     color: white!important;
     cursor: default;
     background-color: #DD473D!important;
@@ -124,6 +125,7 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
     border-color: #333333!important;
     color: black!important;
     z-index: 1;
+    overflow: hidden;
     box-shadow: #5A5A5A 1px 1px,
     #5A5A5A 2px 2px,
     #5A5A5A 3px 3px,
@@ -140,7 +142,8 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
     text-decoration: none;
     background-color: #fff;
     border: 1px solid #333333!important;
-    z-index: 999999;
+    z-index: 999;
+    overflow: hidden;
     box-shadow: #5A5A5A 1px 1px,
     #5A5A5A 2px 2px,
     #5A5A5A 3px 3px,
