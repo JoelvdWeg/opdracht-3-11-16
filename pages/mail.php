@@ -35,7 +35,7 @@ if(isset($_POST['Send'])){
     if($_SESSION['Id'] == $account['Id'])
   $html.= '
 
-  <table style="margin: 5px; border: 3px solid black; border-radius: 5px; background-color: grey ; padding: 10px; font-size: 2em;">
+  <table style="margin: 5px; border: 3px solid black; border-radius: 5px; background-color: light grey ; padding: 10px; font-size: 2em;">
         <tr>
           <td>Name: </td>
           <td>' .$account['Name']. '</td>
