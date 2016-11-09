@@ -208,6 +208,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
       </div>
       <div class="modal-footer">
         <a href="pages/delete.php?Id='.$account['Id'].'"><button type="button" class="btn btn-default">Delete</button></a>
+        <div style="height:10px;"></div>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
