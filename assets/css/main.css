@@ -41,7 +41,7 @@ th{
   width: 150px;
   max-width: 150px;
 
-  background: #E52B50;
+  background: #DD473D;
   color: white;
 }
 
@@ -80,6 +80,9 @@ thead{
 table.dataTable tr.odd td.sorting_1, table.dataTable tr.even td.sorting_1 {
     background-color: white!important;
 }
+label{
+  color: white;
+}
 
 
 .fa{
@@ -106,7 +109,7 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
     z-index: 3;
     color: white!important;
     cursor: default;
-    background-color: #E52B50!important;
+    background-color: #DD473D!important;
     border-color: #333333!important;
 }
 .pagination>li:first-child>a, .pagination>li:first-child>span {
@@ -250,7 +253,7 @@ button.create{
 }
 
 .create:hover, button.create:hover{
-  background: #E52B50!important;
+  background: #DD473D!important;
   color: white!important;
 }
 
@@ -259,7 +262,7 @@ button.create{
   text-shadow: 0 1px 0 #fff;
   background-image: none!important;
   filter: none!important;
-  background: #E52B50!important;
+  background: #DD473D!important;
   color: white!important;
   background-repeat: repeat-x;
   border-radius: 0px!important;
@@ -269,7 +272,7 @@ button.create{
 
 .btn-default:hover{
   background: #333!important;
-  border: 1px solid #E52B50!important;
+  border: 1px solid #DD473D!important;
 }
 .pdf{
   text-decoration: none!important;
