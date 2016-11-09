@@ -112,7 +112,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
                <th>Password(Crypt)</th>
                <th>Server/Host</th>
                <th>Port</th>
-               <th  class="right">Actions</th>
+               <th>Actions</th>
              </tr>
            </thead>
            <tbody>
