@@ -31,16 +31,38 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
     foreach ($gegevens as $account) {
       if($_GET['Id'] == $account['Id']){
     $html.= '
-    <ul>
-      <li>Name: ' .$account['Name']. '</li>
-        <li>Company Name: '.$account['Company Name']. '</li>
-        <li>Domain Name: '.$account['Domain Name']. '</li>
-         <li>User Name: '.$account['User Name']. '</li>
-         <li>Password(Crypt): '.$account['Password']. '</li>
-         <li>Server: '.$account['Server']. '</li>
-         <li>Port: '.$account['Port']. '</li>
-         </ul>
 
+<table style="margin: 5px; border: 3px solid black; border-radius: 5px;padding: 10px; font-size: 2em; background-color: lightgrey;">
+      <tr>
+        <td>Name: </td>
+        <td>' .$account['Name']. '</td>
+      </tr>
+      <tr>
+        <td>Company Name: </td>
+        <td>'.$account['Company Name']. '</td>
+      </tr>
+      <tr>
+        <td>Domain Name: </td>
+        <td>'.$account['Domain Name']. '</td>
+      </tr>
+      <tr>
+        <td>User Name: </td>
+        <td>'.$account['User Name']. '</td>
+      </tr>
+      <tr>
+        <td>Password: </td>
+        <td>'.$account['Password']. '</td>
+      </tr>
+      <tr>
+        <td>Server: </td>
+        <td>'.$account['Server']. '</td>
+      </tr>
+      <tr>
+        <td>Port: </td>
+        <td>'.$account['Port']. '</td>
+      </tr>
+</table>
+</div>
     </body>
     </html>';}
     }
@@ -184,7 +206,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
              <li>'.$account['Port']. '</li>
         </ul>
       </div>
-      <div class="modal-footer">  
+      <div class="modal-footer">
         <a href="pages/delete.php?Id='.$account['Id'].'"><button type="button" class="btn btn-default">Delete</button></a>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
