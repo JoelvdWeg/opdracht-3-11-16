@@ -34,18 +34,40 @@ if(isset($_POST['Send'])){
   foreach ($gegevens as $account) {
     if($_SESSION['Id'] == $account['Id'])
   $html.= '
-  <ul>
-    <li>Name: ' .$account['Name']. '</li>
-      <li>Company Name: '.$account['Company Name']. '</li>
-      <li>Domain Name: '.$account['Domain Name']. '</li>
-       <li>User Name: '.$account['User Name']. '</li>
-       <li>Password(Crypt): '.$account['Password']. '</li>
-       <li>Server: '.$account['Server']. '</li>
-       <li>Port: '.$account['Port']. '</li>
-       </ul>
 
-  </body>
-  </html>'
+  <table style="margin: 5px; border: 3px solid black; border-radius: 5px; background-color: grey ; padding: 10px; font-size: 2em;">
+        <tr>
+          <td>Name: </td>
+          <td>' .$account['Name']. '</td>
+        </tr>
+        <tr>
+          <td>Company Name: </td>
+          <td>'.$account['Company Name']. '</td>
+        </tr>
+        <tr>
+          <td>Domain Name: </td>
+          <td>'.$account['Domain Name']. '</td>
+        </tr>
+        <tr>
+          <td>User Name: </td>
+          <td>'.$account['User Name']. '</td>
+        </tr>
+        <tr>
+          <td>Password: </td>
+          <td>'.$account['Password']. '</td>
+        </tr>
+        <tr>
+          <td>Server: </td>
+          <td>'.$account['Server']. '</td>
+        </tr>
+        <tr>
+          <td>Port: </td>
+          <td>'.$account['Port']. '</td>
+        </tr>
+  </table>
+  </div>
+      </body>
+      </html>'
   ;};
   $pdf->writeHTML($html, true, 0, true, 0);
   $pdf->lastPage();
