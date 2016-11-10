@@ -11,7 +11,7 @@
           $_SESSION['result'] = '';
           $regexname = "/^[a-zA-Z ]{1,30}$/";
           $regexcompany = "/^[a-zA-Z0-9 ]{1,40}$/";
-          $regexdomain= "/^[a-zA-Z0-9 ]{1,100}$/";
+          $regexdomain= "/^[a-zA-Z0-9. ]{1,100}$/";
           $regexusername = "/^[a-zA-Z-_]{1,30}$/";
           $regexpassword = "/^[a-zA-Z0-9]{1,20}$/";
           $regexserver = "/^[a-zA-Z0-9]{1,255}$/";
