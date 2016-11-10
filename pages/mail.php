@@ -35,7 +35,7 @@ if(isset($_POST['Send'])){
     if($_SESSION['Id'] == $account['Id'])
   $html.= '
 
-  table style="margin: 5px; border: 3px solid black; border-radius: 5px;padding: 10px; font-size: 2em; background-color: #eee;">
+  <table style="margin: 5px; border: 3px solid black; border-radius: 5px;padding: 10px; font-size: 2em; background-color: #eee;">
         <tr>
           <th style="text-align:right;">FTP Information</th>
           <th>:</th>
