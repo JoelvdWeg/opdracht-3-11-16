@@ -269,6 +269,7 @@ div.dataTables_wrapper div.dataTables_length select {
   background: #333333!important;
   text-decoration: none!important;
   color: black;
+  border: 1px solid #333!important;
     box-shadow: #5A5A5A 1px 1px,
     #5A5A5A 2px 2px,
     #5A5A5A 3px 3px,
