@@ -291,7 +291,7 @@ button.create{
 
 .create:hover, button.create:hover{
   background: #DD473D!important;
-  border: 1px solid #DD473D!important;
+  border: none!important;
   color: white!important;
 }
 
@@ -310,7 +310,7 @@ button.create{
 
 .btn-default:hover{
   background: #333!important;
-  border: 1px solid #DD473D!important;
+  border: none!important;
 }
 .pdf{
   text-decoration: none!important;
