@@ -262,7 +262,7 @@ div.dataTables_wrapper div.dataTables_length select {
 .logout{
   margin-left: 10px;
   position: relative;
-  bottom: 93px;
+  bottom: 92px;
   width: 29px;
   height: 29px;
   left: 40px;
@@ -291,6 +291,7 @@ button.create{
 
 .create:hover, button.create:hover{
   background: #DD473D!important;
+  border: 1px solid #DD473D!important;
   color: white!important;
 }
 
