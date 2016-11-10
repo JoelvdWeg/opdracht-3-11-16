@@ -160,6 +160,7 @@ div.dataTables_wrapper div.dataTables_filter input {
 
 }
 div.dataTables_wrapper div.dataTables_length select {
+  border-radius: 0px;
   box-shadow: #5A5A5A 1px 1px,
   #5A5A5A 2px 2px,
   #5A5A5A 3px 3px,
