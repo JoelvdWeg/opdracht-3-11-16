@@ -49,7 +49,7 @@ th{
   width: 150px;
   max-width: 150px;
 
-  background: #DD473D;
+  background: #1565C0;
   color: white;
 }
 
@@ -118,7 +118,7 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
     overflow: hidden;
     color: white!important;
     cursor: default;
-    background-color: #DD473D!important;
+    background-color: #1565C0!important;
     border-color: #333333!important;
     box-shadow: #5A5A5A 1px 1px,
     #5A5A5A 2px 2px,
@@ -298,7 +298,7 @@ button.create{
 }
 
 .create:hover, button.create:hover{
-  background: #DD473D!important;
+  background: #1565C0!important;
   border: none!important;
   color: white!important;
 }
@@ -308,7 +308,7 @@ button.create{
   text-shadow: 0 1px 0 #fff;
   background-image: none!important;
   filter: none!important;
-  background: #DD473D!important;
+  background: #1565C0!important;
   color: white!important;
   background-repeat: repeat-x;
   border-radius: 0px!important;
