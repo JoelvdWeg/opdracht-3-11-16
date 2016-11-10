@@ -225,7 +225,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
 </table>
 
 <div  class="creat" data-toggle="tooltip" data-placement="top" title="Create">
-    <a href="pages/create.php"><button class="create"><i class="fa fa-plus" aria-hidden="true"></i></button</a>
+    <a href="pages/create.php"><button class="create"><i class="fa fa-plus" aria-hidden="true"></i></button></a>
 </div>
 
 <div class="logout" data-toggle="tooltip" data-placement="top" title="Log-Out">
