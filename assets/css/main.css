@@ -22,6 +22,14 @@ button{
   background: white!important;
   width: 100%!important;
 }
+.modal-backdrop.in {
+    filter: alpha(opacity=50!important);
+    opacity: .5!important;
+}
+.modal-content {
+  border-radius: 0px!important;
+  border: 1px solid #333!important;
+}
 table{
   box-shadow: #5A5A5A 1px 1px,
   #5A5A5A 2px 2px,
