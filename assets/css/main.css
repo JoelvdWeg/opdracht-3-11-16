@@ -252,20 +252,23 @@ div.dataTables_wrapper div.dataTables_length select {
 }
 .creat{
   position: relative;
-  bottom: 60px;
-  width: 40px;
+  bottom: 65px;
+  width: 29px;
+  height: 29px;
+  padding: 0px;
 
 }
 
 .logout{
+  margin-left: 10px;
   position: relative;
-  bottom: 85px;
+  bottom: 93px;
   width: 29px;
   height: 29px;
   left: 40px;
 }
 .create{
-  padding: 6px 8px!important;
+  padding: 4px 8px!important;
   background: #333333!important;
   text-decoration: none!important;
   color: black;
