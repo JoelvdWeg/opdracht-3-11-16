@@ -25,7 +25,7 @@ button{
 
 .modal-content {
   border-radius: 0px!important;
-  border: 1px solid #333!important;
+  border: 1px solid #212121!important;
   -webkit-box-shadow: -1px 13px 54px 0px rgba(0,0,0,0.75)!important;
   -moz-box-shadow: -1px 13px 54px 0px rgba(0,0,0,0.75)!important;
   box-shadow: -1px 13px 54px 0px rgba(0,0,0,0.75)!important;
@@ -68,6 +68,7 @@ tr.odd{
   text-align: center;
   width: 150px;
   background: white!important;
+  color: #212121;
 }
 
 tr.even{
@@ -75,10 +76,11 @@ tr.even{
   text-align: center;
   width: 150px;
   background: #fff!important;
+  color: #212121;
 }
 
 .right{
-  background: #333333;
+  background: #212121;
   color: white;
 }
 
@@ -110,7 +112,7 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
 .pagination>li:last-child>a, .pagination>li:last-child>span {
     border-top-right-radius: 0px!important;
     border-bottom-right-radius: 0px!important;
-    border-color: #333333!important;
+    border-color: #212121!important;
     color: black!important;
 }
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
@@ -119,7 +121,7 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
     color: white!important;
     cursor: default;
     background-color: #1565C0!important;
-    border-color: #333333!important;
+    border-color: #212121!important;
     box-shadow: #5A5A5A 1px 1px,
     #5A5A5A 2px 2px,
     #5A5A5A 3px 3px,
@@ -130,7 +132,7 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
     margin-left: 0;
     border-top-left-radius: 0px!important;
     border-bottom-left-radius: 0px!important;
-    border-color: #333333!important;
+    border-color: #212121!important;
     color: black!important;
     z-index: 1;
     overflow: hidden;
@@ -149,7 +151,7 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
     color: black!important;
     text-decoration: none;
     background-color: #fff;
-    border: 1px solid #333333!important;
+    border: 1px solid #212121!important;
     z-index: 999;
     overflow: hidden;
     box-shadow: #5A5A5A 1px 1px,
@@ -183,7 +185,7 @@ div.dataTables_wrapper div.dataTables_length select {
 
 
 .Form{
-  background: #333333;
+  background: #212121;
   padding: 10px;
   color: white;
    box-shadow: #5A5A5A 1px 1px,
@@ -277,10 +279,10 @@ div.dataTables_wrapper div.dataTables_length select {
 }
 .create{
   padding: 4px 8px!important;
-  background: #333333!important;
+  background: #212121!important;
   text-decoration: none!important;
   color: black;
-  border: 1px solid #333!important;
+  border: 1px solid #212121!important;
     box-shadow: #5A5A5A 1px 1px,
     #5A5A5A 2px 2px,
     #5A5A5A 3px 3px,
@@ -290,8 +292,8 @@ div.dataTables_wrapper div.dataTables_length select {
 }
 button.create{
   padding: 4px 8px!important;
-  background: #333333!important;
-  border: 1px solid #333!important;
+  background: #212121!important;
+  border: 1px solid #212121!important;
   text-decoration: none!important;
   color: black!important;
 
@@ -312,12 +314,12 @@ button.create{
   color: white!important;
   background-repeat: repeat-x;
   border-radius: 0px!important;
-  border-color: #333333;
+  border-color: #212121;
   width: 100%;
 }
 
 .btn-default:hover{
-  background: #333!important;
+  background: #212121!important;
   border: none!important;
 }
 .pdf{
@@ -326,7 +328,7 @@ button.create{
 }
 
 div.wrapper{
-  background: #333;
+  background: #212121;
   color: white;
   padding: 10px;
   box-shadow: #5A5A5A 1px 1px,
