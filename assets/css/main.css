@@ -22,10 +22,7 @@ button{
   background: white!important;
   width: 100%!important;
 }
-.modal-backdrop.in {
-    filter: alpha(opacity=50!important);
-    opacity: .5!important;
-}
+
 .modal-content {
   border-radius: 0px!important;
   border: 1px solid #333!important;

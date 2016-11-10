@@ -99,7 +99,7 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
         <!-- Latest compiled JavaScript -->
-        <script src="assets/js/vendor/bootstrap.min.js"></script>
+        <!-- <script src="assets/js/vendor/bootstrap.min.js"></script> -->
 
 
      </head>
