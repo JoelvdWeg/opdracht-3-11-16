@@ -32,7 +32,11 @@ if(empty($_GET['pdf'])){$_GET['pdf']='';}
       if($_GET['Id'] == $account['Id']){
     $html.= '
 
-<table style="margin: 5px; border: 3px solid black; border-radius: 5px;padding: 10px; font-size: 2em; background-color: #666;">
+<table style="margin: 5px; border: 3px solid black; border-radius: 5px;padding: 10px; font-size: 2em; background-color: #eee;">
+      <tr>
+        <th style="text-align:right;">FTP Information</th>
+        <th>:</th>
+      </tr>
       <tr>
         <td>Name: </td>
         <td>' .$account['Name']. '</td>
